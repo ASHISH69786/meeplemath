@@ -1,0 +1,71 @@
+{
+  "name": "Cartographers",
+  "metaTitle": "Cartographers Score Calculator (All Four Seasons)",
+  "metaDescription": "Free Cartographers score calculator. Total the reputation stars from spring, summer, autumn and winter, including coins and monster penalties.",
+  "players": {
+    "min": 1,
+    "max": 8
+  },
+  "intro": "Cartographers is scored season by season, and it is easy to slip when adding four boxes at the end. Enter each player's season totals and the calculator finds the most famous mapmaker.",
+  "categories": [
+    {
+      "id": "spring",
+      "label": "Spring",
+      "type": "number",
+      "help": "Spring score: edicts A and B, plus coins, minus the monster penalty.",
+      "allowNegative": true
+    },
+    {
+      "id": "summer",
+      "label": "Summer",
+      "type": "number",
+      "help": "Summer score: edicts B and C, plus coins, minus the monster penalty.",
+      "allowNegative": true
+    },
+    {
+      "id": "autumn",
+      "label": "Autumn",
+      "type": "number",
+      "help": "Autumn score: edicts C and D, plus coins, minus the monster penalty.",
+      "allowNegative": true
+    },
+    {
+      "id": "winter",
+      "label": "Winter",
+      "type": "number",
+      "help": "Winter score: edicts D and A, plus coins, minus the monster penalty.",
+      "allowNegative": true
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one who lost the fewest reputation stars to monsters wins. If still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Cartographers",
+      "body": [
+        "Cartographers is played over four seasons. At the end of each season, every player scores reputation stars on their map sheet, and the game ends after winter. Your final score is the total of the four season scores."
+      ]
+    },
+    {
+      "heading": "What each season scores",
+      "body": [
+        "Four edicts, labelled A to D, are set out at the start. Each season scores two of them: spring scores A and B, summer B and C, autumn C and D, and winter D and A, so each edict is scored twice.",
+        "Every season you also score 1 star for each coin you have, and you lose 1 star for each empty space next to a monster on your map. Write the season's total in its box and enter it here."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which edicts score in which season?",
+      "a": "Spring A and B, summer B and C, autumn C and D, winter D and A."
+    },
+    {
+      "q": "Do coins score every season?",
+      "a": "Yes. Each coin you have is worth 1 star at the end of every season."
+    },
+    {
+      "q": "How do monsters score?",
+      "a": "You lose 1 reputation star for each empty space adjacent to a monster space on your map, every season."
+    }
+  ]
+}

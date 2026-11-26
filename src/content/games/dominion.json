@@ -1,0 +1,118 @@
+{
+  "name": "Dominion",
+  "metaTitle": "Dominion Score Calculator (Provinces, Gardens & Prosperity)",
+  "metaDescription": "Free Dominion score calculator for 2–4 players. Count Estates, Duchies, Provinces, Curses and Gardens, with Colonies and VP tokens from Prosperity.",
+  "players": {
+    "min": 2,
+    "max": 6
+  },
+  "intro": "At the end of Dominion everyone dumps their deck on the table and counts Victory cards. Enter how many of each card each player has and the calculator works out the totals, including Gardens.",
+  "categories": [
+    {
+      "id": "victory",
+      "label": "Victory cards",
+      "type": "counts",
+      "help": "How many of each basic Victory card is in your deck.",
+      "items": [
+        {
+          "label": "Estates",
+          "points": 1
+        },
+        {
+          "label": "Duchies",
+          "points": 3
+        },
+        {
+          "label": "Provinces",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "id": "curses",
+      "label": "Curses",
+      "type": "number",
+      "help": "Curse cards in your deck. Each one is worth −1.",
+      "multiplier": -1,
+      "unit": "−1 pt each"
+    },
+    {
+      "id": "gardens",
+      "label": "Gardens points",
+      "type": "number",
+      "help": "Each Gardens is worth 1 point for every 10 cards in your deck, rounded down. Enter the total for all your Gardens."
+    },
+    {
+      "id": "other",
+      "label": "Other Victory points",
+      "type": "number",
+      "help": "Points from any other Victory cards from the kingdom, such as Duke or Great Hall."
+    }
+  ],
+  "expansions": [
+    {
+      "id": "prosperity",
+      "name": "Prosperity",
+      "description": "Adds Colonies worth 10 points each and victory point tokens.",
+      "categories": [
+        {
+          "id": "colonies",
+          "label": "Colonies",
+          "type": "number",
+          "help": "Colony cards in your deck.",
+          "multiplier": 10,
+          "unit": "10 pts each"
+        },
+        {
+          "id": "vp-tokens",
+          "label": "VP tokens",
+          "type": "number",
+          "help": "Victory point tokens on your mat.",
+          "unit": "1 pt each"
+        }
+      ]
+    }
+  ],
+  "tiebreaker": "If players are tied, the tied player who had the fewest turns wins. If they had the same number of turns, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Dominion",
+      "body": [
+        "The game ends at the end of a turn when either the Province pile is empty or any three Supply piles are empty. Every player then collects all of their cards (hand, deck, discard pile and anything set aside) and counts the victory points."
+      ]
+    },
+    {
+      "heading": "Basic Victory cards and Curses",
+      "body": [
+        "An Estate is worth 1 point, a Duchy 3 and a Province 6. Each Curse is worth −1. Every player starts with 3 Estates, so remember to count them."
+      ]
+    },
+    {
+      "heading": "Gardens and other Victory cards",
+      "body": [
+        "Gardens is worth 1 point for every full 10 cards in your deck, so 38 cards makes each Gardens worth 3. Count your whole deck once and multiply by the number of Gardens you own.",
+        "Expansions add many Victory cards with their own rules, such as Duke (worth 1 per Duchy). Work out their value and enter the total in the 'Other' row."
+      ]
+    },
+    {
+      "heading": "Prosperity",
+      "body": [
+        "When Prosperity's Colonies are in the game, each Colony is worth 10 points and the game also ends if the Colony pile runs out. Victory point tokens earned during the game are worth 1 point each."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many points is a Province worth?",
+      "a": "6 points. A Duchy is 3, an Estate is 1 and a Curse is −1."
+    },
+    {
+      "q": "How do Gardens score?",
+      "a": "Each Gardens is worth 1 point per 10 cards in your deck, rounded down."
+    },
+    {
+      "q": "Who wins a tie in Dominion?",
+      "a": "The tied player who took fewer turns. If they had the same number of turns, the win is shared."
+    }
+  ]
+}

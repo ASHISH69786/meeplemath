@@ -1,0 +1,103 @@
+{
+  "name": "Terraforming Mars",
+  "metaTitle": "Terraforming Mars Score Calculator (TR, Awards, Cities & Cards)",
+  "metaDescription": "Free Terraforming Mars score calculator for 1–5 players. Add TR, milestones, awards, greeneries, city adjacency and card points without the scoring sheet.",
+  "players": {
+    "min": 1,
+    "max": 5
+  },
+  "intro": "Final scoring in Terraforming Mars means walking the whole map counting greeneries next to cities, then going through every card in every tableau. Enter each player's numbers below and the calculator totals and ranks them.",
+  "categories": [
+    {
+      "id": "tr",
+      "label": "Terraform Rating",
+      "type": "number",
+      "help": "Your final position on the TR track around the edge of the board."
+    },
+    {
+      "id": "milestones",
+      "label": "Milestones claimed",
+      "type": "number",
+      "help": "How many milestones you claimed. Each one is worth 5 points.",
+      "multiplier": 5,
+      "unit": "5 pts each"
+    },
+    {
+      "id": "awards",
+      "label": "Award points",
+      "type": "number",
+      "help": "Points from funded awards: 5 for first place and 2 for second in each award. In a two-player game only first place scores."
+    },
+    {
+      "id": "greenery",
+      "label": "Greenery tiles",
+      "type": "number",
+      "help": "Greenery tiles you own on the map.",
+      "unit": "1 pt each"
+    },
+    {
+      "id": "cities",
+      "label": "City adjacency",
+      "type": "number",
+      "help": "For each of your cities, 1 point for every adjacent greenery tile, no matter who owns the greenery."
+    },
+    {
+      "id": "cards",
+      "label": "Card points",
+      "type": "number",
+      "help": "Victory points printed on your played cards, including points from resources such as animals or microbes. Some cards are worth negative points.",
+      "allowNegative": true
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one with the most megacredits (M€) left wins.",
+  "rules": [
+    {
+      "heading": "How scoring works in Terraforming Mars",
+      "body": [
+        "The game ends after the generation in which the last of the three global parameters (temperature, oxygen and oceans) is maxed out. Players then do a final round of greenery placement using their plants, and score.",
+        "Your score starts from your Terraform Rating (TR), which you have been raising all game. To that you add milestones, awards, the tiles you own on the board and the points on your cards."
+      ]
+    },
+    {
+      "heading": "Milestones and awards",
+      "body": [
+        "Each milestone you claimed during the game is worth 5 points. Only three milestones can be claimed in total.",
+        "Up to three awards can be funded. For each funded award, the player in first place scores 5 points and the player in second place scores 2, whoever funded it. If players tie for first, they all get 5 and nobody gets second place. If players tie for second, they all get 2. In a two-player game, second place is not awarded."
+      ]
+    },
+    {
+      "heading": "Greeneries and cities",
+      "body": [
+        "Each greenery tile you own is worth 1 point. Each city you own scores 1 point for every greenery tile next to it, including greeneries placed by other players.",
+        "Counting city adjacency is where most mistakes happen. Go city by city and count the six surrounding hexes."
+      ]
+    },
+    {
+      "heading": "Card points",
+      "body": [
+        "Many cards show victory points in the bottom corner. Some score a fixed amount, others score per resource on the card (for example 1 point per animal), and a few are negative. Add them all together, including your corporation if it scores."
+      ]
+    },
+    {
+      "heading": "Expansions",
+      "body": [
+        "Prelude, Colonies, Venus Next and Turmoil change how you gain TR and cards during the game, but they do not add a new end-game scoring category. Venus Next adds the Venus track, which raises your TR, along with a new milestone and award. All of these fit in the rows above."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do greeneries owned by other players count for my city?",
+      "a": "Yes. A city scores 1 point for every adjacent greenery tile, regardless of who placed it."
+    },
+    {
+      "q": "How many points is an award worth?",
+      "a": "5 points for first place and 2 for second place. In a two-player game only first place scores."
+    },
+    {
+      "q": "How are ties broken?",
+      "a": "The tied player with the most megacredits left wins."
+    }
+  ]
+}

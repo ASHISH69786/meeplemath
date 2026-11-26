@@ -1,0 +1,67 @@
+{
+  "name": "Wingspan",
+  "metaTitle": "Wingspan Score Calculator (with Oceania Nectar)",
+  "metaDescription": "Free Wingspan score calculator for 1–5 players. Add up birds, bonus cards, round goals, eggs, cached food, tucked cards and Oceania nectar in seconds.",
+  "players": { "min": 1, "max": 5 },
+  "intro": "Wingspan ends with a lot of small numbers spread across every player's mat. Type in each player's points below and the calculator adds them up, ranks the table and keeps a record of the game on your device.",
+  "categories": [
+    { "id": "birds", "label": "Birds", "type": "number", "help": "Add up the feather points printed on every bird in your three habitats." },
+    { "id": "bonus", "label": "Bonus cards", "type": "number", "help": "Points from every bonus card you hold, including any you gained during the game." },
+    { "id": "goals", "label": "End-of-round goals", "type": "number", "help": "Total of the points you scored on the goal board across all four rounds." },
+    { "id": "eggs", "label": "Eggs", "type": "number", "unit": "1 pt each", "help": "Count every egg sitting on your birds." },
+    { "id": "food", "label": "Food on cards", "type": "number", "unit": "1 pt each", "help": "Food cached on bird cards. Food left in your personal supply scores nothing." },
+    { "id": "tucked", "label": "Tucked cards", "type": "number", "unit": "1 pt each", "help": "Cards tucked behind your birds." }
+  ],
+  "expansions": [
+    {
+      "id": "oceania",
+      "name": "Oceania Expansion",
+      "description": "Adds nectar. At the end of the game, compare the nectar each player spent in each habitat: the most scores 5 points and second place scores 2.",
+      "categories": [
+        { "id": "nectar", "label": "Nectar", "type": "number", "help": "Your nectar majority points across all three habitats: 5 for most and 2 for second in each one." }
+      ]
+    }
+  ],
+  "tiebreaker": "If players are tied on points, the player with the most unused food tokens in their supply wins. If they are still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Wingspan",
+      "body": [
+        "Wingspan is played over four rounds, and nearly all of the scoring happens once the last round is over. Each player adds up six sources of points: the birds they played, their bonus cards, the end-of-round goals, the eggs on their birds, the food cached on their cards, and the cards tucked behind their birds.",
+        "The only points scored during play are the end-of-round goals, which are marked on the goal board after each round. Everything else is counted from your player mat at the end."
+      ]
+    },
+    {
+      "heading": "Birds, eggs, food and tucked cards",
+      "body": [
+        "Every bird card shows a point value next to a feather symbol. Add up the value of every bird in your forest, grassland and wetland.",
+        "Each egg on your birds is worth 1 point, each food token cached on a bird card is worth 1 point, and each card tucked behind a bird is worth 1 point. Food in your personal supply, cards in your hand and unplayed bonus cards are worth nothing."
+      ]
+    },
+    {
+      "heading": "End-of-round goals",
+      "body": [
+        "The goal board has two sides. On the green (competitive) side, players compare their progress on each round's goal, and first, second and third place score points that grow as the game goes on: 4/1/0 in round 1, 5/2/1 in round 2, 6/3/2 in round 3 and 7/4/3 in round 4. Tied players add up the points for the places they share and split them evenly, rounding down.",
+        "On the blue side, each player scores 1 point for every item that matches the goal, up to a maximum of 5, so nobody is competing directly. Whichever side you use, enter each player's total for all four rounds in the round goals row."
+      ]
+    },
+    {
+      "heading": "Bonus cards",
+      "body": [
+        "Each player starts with a bonus card and may gain more from bird powers. Each card describes its own condition, such as birds with a certain trait, and either scores a fixed amount once you hit a threshold or scores points per matching bird. Add up every bonus card you hold."
+      ]
+    },
+    {
+      "heading": "Expansions",
+      "body": [
+        "The European Expansion and the Asia expansion add new birds, bonus cards and goals but no new kind of scoring, so the six base categories cover them.",
+        "The Oceania Expansion adds nectar, a wild food. Nectar you spend is placed in the habitat where you spent it. At the end of the game, in each habitat, the player who spent the most nectar scores 5 points and the second-most scores 2. Ties are split the same way as competitive goals. Turn on Oceania above to add a nectar row."
+      ]
+    }
+  ],
+  "faq": [
+    { "q": "Do leftover food tokens score points in Wingspan?", "a": "No. Only food cached on bird cards scores, at 1 point each. Food in your personal supply is used only to break ties." },
+    { "q": "Do cards in my hand count?", "a": "No. Bird cards in your hand and bonus cards you did not keep score nothing." },
+    { "q": "How are ties broken in Wingspan?", "a": "The tied player with the most unused food tokens wins. If they are still tied, they share the win." }
+  ]
+}

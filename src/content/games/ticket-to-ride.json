@@ -1,0 +1,70 @@
+{
+  "name": "Ticket to Ride",
+  "metaTitle": "Ticket to Ride Score Calculator (Routes, Tickets & Bonuses)",
+  "metaDescription": "Free Ticket to Ride score calculator for 2–5 players. Count routes by length, add completed tickets, subtract failed ones and award Longest Path or Globetrotter.",
+  "players": { "min": 2, "max": 5 },
+  "intro": "Points on the scoring track drift easily during a game of Ticket to Ride. Use this calculator to recount at the end: enter how many routes of each length each player claimed, add their tickets, and award the bonus cards.",
+  "categories": [
+    {
+      "id": "routes",
+      "label": "Claimed routes",
+      "type": "counts",
+      "help": "Enter how many routes of each length the player claimed.",
+      "items": [
+        { "label": "1-train routes", "points": 1 },
+        { "label": "2-train routes", "points": 2 },
+        { "label": "3-train routes", "points": 4 },
+        { "label": "4-train routes", "points": 7 },
+        { "label": "5-train routes", "points": 10 },
+        { "label": "6-train routes", "points": 15 }
+      ]
+    },
+    { "id": "tickets-done", "label": "Completed tickets", "type": "number", "help": "Add the values of every destination ticket you completed." },
+    { "id": "tickets-failed", "label": "Failed tickets", "type": "number", "multiplier": -1, "unit": "subtracted", "help": "Add the values of every ticket you did not complete. They are subtracted from your score." },
+    { "id": "longest", "label": "Longest Continuous Path", "type": "bonus", "points": 10, "help": "10 points to the player with the longest continuous line of trains. Tied players all score it." }
+  ],
+  "expansions": [
+    {
+      "id": "usa-1910",
+      "name": "USA 1910",
+      "description": "Adds the Globetrotter bonus card: 15 points for the player who completed the most destination tickets.",
+      "categories": [
+        { "id": "globetrotter", "label": "Globetrotter", "type": "bonus", "points": 15, "help": "15 points to the player who completed the most tickets. Tied players all score it." }
+      ]
+    }
+  ],
+  "tiebreaker": "If players are tied, the one who completed the most destination tickets wins. If still tied, the player holding the Longest Continuous Path bonus wins.",
+  "rules": [
+    {
+      "heading": "How scoring works in Ticket to Ride",
+      "body": [
+        "This calculator follows the original Ticket to Ride map of North America. You score points in three ways: claiming routes during the game, completing destination tickets, and earning the Longest Continuous Path bonus at the end.",
+        "Route points are normally moved along the scoring track as you play, but it is easy for a marker to slip or for someone to forget to move. The rules let you recount at the end, which is what this calculator is for."
+      ]
+    },
+    {
+      "heading": "Route points",
+      "body": [
+        "Longer routes are worth more per train. A 1-train route scores 1 point, 2 trains score 2, 3 trains score 4, 4 trains score 7, 5 trains score 10 and 6 trains score 15. Count how many routes of each length the player holds; the calculator multiplies them out."
+      ]
+    },
+    {
+      "heading": "Destination tickets",
+      "body": [
+        "At the end of the game, everyone reveals their destination tickets. If your trains form a continuous path between the two cities on a ticket, you add its value. If they do not, you subtract its value, even if you were close. Keep this in mind before drawing more tickets late in the game."
+      ]
+    },
+    {
+      "heading": "Longest Continuous Path and Globetrotter",
+      "body": [
+        "The player with the longest unbroken line of their own trains receives the Longest Continuous Path card for 10 points. The path can loop back through the same city but cannot use the same train twice. If several players tie, they all score the bonus.",
+        "The USA 1910 expansion adds the Globetrotter card, worth 15 points to the player who completed the most tickets. Depending on which 1910 variant you play, it is used alongside the longest path bonus or instead of it, so tick only the bonuses your variant uses."
+      ]
+    }
+  ],
+  "faq": [
+    { "q": "How many points is a 6-train route worth?", "a": "15 points on the original map." },
+    { "q": "Do incomplete tickets lose points?", "a": "Yes. The value of every ticket you did not complete is subtracted from your score." },
+    { "q": "Does this calculator work for Ticket to Ride: Europe?", "a": "Not exactly. Europe adds stations, tunnels and an 8-train route worth 21 points, so it needs its own calculator." }
+  ]
+}

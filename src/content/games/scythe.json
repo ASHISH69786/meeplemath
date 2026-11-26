@@ -1,0 +1,120 @@
+{
+  "name": "Scythe",
+  "metaTitle": "Scythe Score Calculator (Popularity, Stars, Territories & Coins)",
+  "metaDescription": "Free Scythe score calculator for 1–5 players. Enter popularity, stars, territories and resources and it applies the right tier multiplier automatically.",
+  "players": {
+    "min": 1,
+    "max": 7
+  },
+  "intro": "In Scythe your score is your money, and the end-of-game payout depends on your popularity tier. Enter each player's popularity and what they control, and the calculator applies the right multipliers.",
+  "categories": [
+    {
+      "id": "coins",
+      "label": "Coins in hand",
+      "type": "number",
+      "help": "The coins you have before end-of-game scoring."
+    },
+    {
+      "id": "popularity",
+      "label": "Popularity scoring",
+      "type": "tiered",
+      "help": "Your popularity sets how much each star, territory and pair of resources pays. The factory counts as 3 territories.",
+      "tierLabel": "Popularity",
+      "tiers": [
+        {
+          "min": 0,
+          "max": 6,
+          "label": "Tier 1 (0–6)"
+        },
+        {
+          "min": 7,
+          "max": 12,
+          "label": "Tier 2 (7–12)"
+        },
+        {
+          "min": 13,
+          "max": 18,
+          "label": "Tier 3 (13–18)"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Stars placed",
+          "points": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "label": "Territories controlled",
+          "points": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "label": "Resources controlled",
+          "points": [
+            1,
+            2,
+            3
+          ],
+          "per": 2
+        }
+      ]
+    },
+    {
+      "id": "structure",
+      "label": "Structure bonus",
+      "type": "number",
+      "help": "Coins from the structure bonus tile, based on where your structures are built."
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "Ties are broken by the tiebreakers in the rulebook, starting with the most workers, then mechs, structures, recruits, resource tokens, territories and finally popularity.",
+  "rules": [
+    {
+      "heading": "How scoring works in Scythe",
+      "body": [
+        "The game ends immediately when a player places their sixth star. Everyone then scores coins for their stars, territories and resources, plus the structure bonus. Those coins are added to the coins already in hand, and the richest player wins.",
+        "How much each of these is worth depends on your popularity at the end of the game, which is why popularity matters even though it never scores on its own."
+      ]
+    },
+    {
+      "heading": "Popularity tiers",
+      "body": [
+        "With popularity 0 to 6, each star is worth 3 coins, each territory 2 and every two resources 1. With popularity 7 to 12, the values rise to 4, 3 and 2. With popularity 13 to 18, they are 5, 4 and 3.",
+        "Enter your popularity in the calculator and it picks the right tier for you."
+      ]
+    },
+    {
+      "heading": "Territories and resources",
+      "body": [
+        "You control a territory if you have a worker, mech, character or structure on it, or if you are the only player with resources there. The factory is worth 3 territories. Lakes cannot be controlled.",
+        "Resources (oil, metal, food and wood) score in pairs, so count all the resources on territories you control and the calculator divides by two, rounding down."
+      ]
+    },
+    {
+      "heading": "Structure bonus",
+      "body": [
+        "The structure bonus tile chosen at setup rewards a particular layout of buildings, such as structures next to lakes or tunnels. Look up the tile and enter the coins it gives you."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much is a star worth in Scythe?",
+      "a": "3, 4 or 5 coins, depending on whether your popularity is 0–6, 7–12 or 13–18."
+    },
+    {
+      "q": "Does the factory count as one territory?",
+      "a": "No. Controlling the factory counts as 3 territories."
+    },
+    {
+      "q": "Do coins in hand count?",
+      "a": "Yes. Your final score is your coins in hand plus everything you earn at end-of-game scoring."
+    }
+  ]
+}

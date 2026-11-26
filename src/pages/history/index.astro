@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import History from '../../components/History.tsx';
+import { gameUrl, getGames } from '../../lib/games';
+
+const games = (await getGames()).map((g) => ({ slug: g.slug, name: g.name, url: gameUrl(g.slug) }));
+---
+
+<Layout title="Game History and Player Stats" description="Your saved board game results and player win stats, stored privately on this device.">
+  <h1 class="font-display text-4xl font-bold tracking-tight">Game history &amp; stats</h1>
+  <p class="mt-2 max-w-2xl text-muted">Every game you save from a calculator appears here. It is stored only in this browser.</p>
+  <div class="mt-6">
+    <History client:only="preact" games={games} />
+  </div>
+</Layout>

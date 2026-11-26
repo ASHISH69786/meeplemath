@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://meeplemath.org/sitemap-index.xml

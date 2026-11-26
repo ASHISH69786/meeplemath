@@ -1,0 +1,124 @@
+{
+  "name": "Cascadia",
+  "metaTitle": "Cascadia Score Calculator (Wildlife, Habitats & Nature Tokens)",
+  "metaDescription": "Free Cascadia score calculator for 1–4 players. Add bear, elk, salmon, hawk and fox points, habitat corridors, majority bonuses and nature tokens.",
+  "players": {
+    "min": 1,
+    "max": 4
+  },
+  "intro": "Cascadia's scoring pad has a lot of boxes: five wildlife cards, five habitats, majority bonuses and nature tokens. Enter each player's points below and the calculator does the adding.",
+  "categories": [
+    {
+      "id": "wildlife",
+      "label": "Wildlife scoring cards",
+      "type": "counts",
+      "help": "Points from each wildlife scoring card in play, following the card you set up with (A, B, C or D).",
+      "items": [
+        {
+          "label": "Bear points",
+          "points": 1
+        },
+        {
+          "label": "Elk points",
+          "points": 1
+        },
+        {
+          "label": "Salmon points",
+          "points": 1
+        },
+        {
+          "label": "Hawk points",
+          "points": 1
+        },
+        {
+          "label": "Fox points",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "habitats",
+      "label": "Largest habitat corridors",
+      "type": "counts",
+      "help": "For each habitat, the number of tiles in your largest connected group of that habitat. 1 point per tile.",
+      "items": [
+        {
+          "label": "Mountains",
+          "points": 1
+        },
+        {
+          "label": "Forests",
+          "points": 1
+        },
+        {
+          "label": "Prairies",
+          "points": 1
+        },
+        {
+          "label": "Wetlands",
+          "points": 1
+        },
+        {
+          "label": "Rivers",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "majority",
+      "label": "Habitat majority bonuses",
+      "type": "number",
+      "help": "Bonus points for having the largest (or second-largest) corridor of a habitat compared with other players."
+    },
+    {
+      "id": "nature",
+      "label": "Nature tokens left",
+      "type": "number",
+      "help": "Unspent nature tokens.",
+      "unit": "1 pt each"
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one with the most nature tokens left wins. If still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Cascadia",
+      "body": [
+        "Cascadia ends after the turn in which the last habitat tile is taken; every player gets 20 turns. Each player then scores their wildlife, their habitats and their leftover nature tokens."
+      ]
+    },
+    {
+      "heading": "Wildlife",
+      "body": [
+        "At setup, one scoring card is chosen for each of the five animals: bear, elk, salmon, hawk and fox. Each card describes a pattern, such as pairs of bears or lines of elk, and how many points it is worth. Score each animal separately using its card and enter the five results."
+      ]
+    },
+    {
+      "heading": "Habitats and majority bonuses",
+      "body": [
+        "For each of the five habitat types, find your largest group of connected tiles showing that habitat. You score 1 point per tile in that group. Only the largest group of each type counts.",
+        "In a game with 3 or 4 players, whoever has the largest group of a habitat also scores 3 bonus points, and second place scores 1. In a 2-player game, the largest group scores 2 bonus points. The rulebook gives reduced bonuses when players tie. Add all your bonuses together for the majority row."
+      ]
+    },
+    {
+      "heading": "Nature tokens",
+      "body": [
+        "Nature tokens are earned by placing wildlife on keystone tiles. Each one you did not spend is worth 1 point at the end, and they also break ties."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do all my habitat groups score in Cascadia?",
+      "a": "No. Only your single largest connected group of each habitat type scores, at 1 point per tile."
+    },
+    {
+      "q": "How much is a nature token worth?",
+      "a": "1 point each if unspent at the end of the game."
+    },
+    {
+      "q": "How are ties broken?",
+      "a": "The tied player with the most nature tokens wins; otherwise the victory is shared."
+    }
+  ]
+}

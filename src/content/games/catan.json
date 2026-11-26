@@ -1,0 +1,71 @@
+{
+  "name": "Catan",
+  "metaTitle": "Catan Score Calculator (with Cities & Knights and Seafarers)",
+  "metaDescription": "Free Catan victory point calculator for 3–6 players. Count settlements, cities, development cards, Longest Road and Largest Army, plus Cities & Knights.",
+  "players": { "min": 3, "max": 6 },
+  "intro": "In Catan the game ends the moment someone reaches the target score, but it is easy to lose track of hidden points and bonus cards. Enter what each player has on the board and the calculator totals their victory points.",
+  "categories": [
+    { "id": "settlements", "label": "Settlements", "type": "number", "unit": "1 pt each", "help": "Settlements on the board." },
+    { "id": "cities", "label": "Cities", "type": "number", "multiplier": 2, "unit": "2 pts each", "help": "Cities on the board." },
+    { "id": "vp-cards", "label": "Victory Point cards", "type": "number", "unit": "1 pt each", "help": "Victory Point development cards, revealed or hidden." },
+    { "id": "longest-road", "label": "Longest Road", "type": "bonus", "points": 2, "exclusive": true, "help": "2 points to the single player holding the Longest Road card." },
+    { "id": "largest-army", "label": "Largest Army", "type": "bonus", "points": 2, "exclusive": true, "help": "2 points to the single player holding the Largest Army card." }
+  ],
+  "expansions": [
+    {
+      "id": "seafarers",
+      "name": "Seafarers",
+      "description": "Scenarios award extra victory point tokens, for example for settling on a new island.",
+      "categories": [
+        { "id": "scenario-vp", "label": "Scenario VP tokens", "type": "number", "help": "Total value of the victory point tokens the scenario gave you." }
+      ]
+    },
+    {
+      "id": "cities-knights",
+      "name": "Cities & Knights",
+      "description": "Removes development cards and Largest Army, and adds metropolises, Defender of Catan cards, the merchant and progress cards worth points.",
+      "removes": ["vp-cards", "largest-army"],
+      "categories": [
+        { "id": "metropolis", "label": "Metropolises", "type": "number", "multiplier": 2, "unit": "+2 pts each", "help": "Each metropolis adds 2 points on top of the 2 for the city underneath it." },
+        { "id": "defender", "label": "Defender of Catan", "type": "number", "unit": "1 pt each", "help": "Defender of Catan cards earned by defending against the barbarians." },
+        { "id": "progress-vp", "label": "Printer / Constitution", "type": "number", "unit": "1 pt each", "help": "Progress cards worth 1 point each that you have played." },
+        { "id": "merchant", "label": "Merchant", "type": "bonus", "points": 1, "exclusive": true, "help": "1 point to the player who controls the merchant." }
+      ]
+    }
+  ],
+  "tiebreaker": "Catan has no ties. The game ends as soon as a player reaches the target score on their own turn, and that player wins.",
+  "rules": [
+    {
+      "heading": "How scoring works in Catan",
+      "body": [
+        "In the base game, the first player to reach 10 victory points on their own turn wins immediately. Points come from buildings on the board, Victory Point development cards and two bonus cards that can change hands during the game.",
+        "Because some cards are kept hidden until the end, a quick recount helps settle any doubt about who actually got there first."
+      ]
+    },
+    {
+      "heading": "Buildings",
+      "body": [
+        "Each settlement is worth 1 point and each city is worth 2. A city replaces a settlement, so upgrading one adds a single point to your total rather than two. Count only what is on the board now."
+      ]
+    },
+    {
+      "heading": "Development cards, Longest Road and Largest Army",
+      "body": [
+        "Victory Point development cards are worth 1 point each. You may keep them hidden and reveal them when they would win you the game.",
+        "The first player to build a continuous road of at least 5 segments takes the Longest Road card, worth 2 points. The first player to play 3 knights takes the Largest Army card, also worth 2. Either card moves to another player as soon as they beat the current holder, so only one player can hold each card at a time."
+      ]
+    },
+    {
+      "heading": "Seafarers and Cities & Knights",
+      "body": [
+        "Seafarers scenarios set their own target score and often hand out victory point tokens, for example for settling on a new island. Enter them in the scenario row.",
+        "Cities & Knights raises the target to 13 points. It replaces development cards with progress cards and drops Largest Army. Instead, a metropolis adds 2 points to a city, each Defender of Catan card is worth 1, the player controlling the merchant gains 1, and the Printer and Constitution progress cards are worth 1 each."
+      ]
+    }
+  ],
+  "faq": [
+    { "q": "How many points do you need to win Catan?", "a": "10 victory points in the base game, 13 with Cities & Knights. Seafarers scenarios set their own target." },
+    { "q": "Is a city worth 2 or 3 points?", "a": "A city is worth 2 points. It replaces a settlement, so upgrading increases your score by 1." },
+    { "q": "Can two players share Longest Road?", "a": "No. A tie does not take the card from its current holder, and only one player can have it." }
+  ]
+}

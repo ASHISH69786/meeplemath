@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "@fontsource-variable/fredoka/wght.css";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-display: "Fredoka Variable", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --color-paper: #fff6e0;
+  --color-surface: #ffffff;
+  --color-ink: #1e1b2e;
+  --color-muted: #5e5873;
+  --color-soft: #f4ead0;
+  --color-accent: #ff5a36;
+  --color-on-accent: #ffffff;
+  --color-sun: #ffc93c;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  /* subtle dotted "game board" texture */
+  background-image: radial-gradient(rgb(30 27 46 / 0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+@layer components {
+  /* Chunky card: thick outline + offset shadow, like a game tile */
+  .chunk {
+    @apply rounded-3xl border-[2.5px] border-ink bg-surface;
+    box-shadow: 4px 4px 0 var(--color-ink);
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border-[2.5px] border-ink px-5 py-2.5 font-display text-lg font-semibold transition-transform select-none;
+    box-shadow: 3px 3px 0 var(--color-ink);
+  }
+  .btn:hover:not(:disabled) {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--color-ink);
+  }
+  .btn:active:not(:disabled) {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--color-ink);
+  }
+  .btn:disabled {
+    @apply cursor-not-allowed opacity-45;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border-2 border-ink bg-surface px-3 py-1 text-sm font-semibold;
+  }
+
+  .prose-mm h2 { @apply mt-10 font-display text-3xl font-semibold; }
+  .prose-mm h3 { @apply mt-6 font-display text-xl font-semibold; }
+  .prose-mm p { @apply mt-3 text-[1.05rem] leading-relaxed; }
+}
+
+/* Hide number spinners: we have our own big − / + buttons. */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

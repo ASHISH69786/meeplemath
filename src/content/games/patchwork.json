@@ -1,0 +1,71 @@
+{
+  "name": "Patchwork",
+  "metaTitle": "Patchwork Score Calculator (Buttons, Empty Spaces & Bonus Tile)",
+  "metaDescription": "Free Patchwork score calculator for 2 players. Count buttons, subtract 2 for every empty space on your quilt and add the 7×7 bonus tile.",
+  "players": {
+    "min": 2,
+    "max": 2
+  },
+  "intro": "Patchwork's final score is quick, but the minus two per empty square catches people out. Enter each player's buttons and empty spaces and see who stitched the better quilt.",
+  "categories": [
+    {
+      "id": "buttons",
+      "label": "Buttons",
+      "type": "number",
+      "help": "The buttons you have at the end of the game."
+    },
+    {
+      "id": "empty",
+      "label": "Empty spaces",
+      "type": "number",
+      "help": "Empty squares on your 9×9 quilt board. Each costs 2 points.",
+      "multiplier": -2,
+      "unit": "−2 pts each"
+    },
+    {
+      "id": "bonus",
+      "label": "7×7 bonus tile",
+      "type": "bonus",
+      "points": 7,
+      "exclusive": true,
+      "help": "Awarded to the first player to fill a complete 7×7 square on their quilt."
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the player who reached the final space of the time board first wins.",
+  "rules": [
+    {
+      "heading": "How scoring works in Patchwork",
+      "body": [
+        "The game ends when both players' time tokens reach the centre of the time board. Each player then counts the buttons they have, subtracts 2 points for every empty space on their quilt board, and adds 7 if they hold the special bonus tile."
+      ]
+    },
+    {
+      "heading": "Buttons and button income",
+      "body": [
+        "Buttons are both money and points. You earn them by moving past button spaces on the time board, which pays one button for every button symbol on your patches. Whatever you have not spent by the end is your base score."
+      ]
+    },
+    {
+      "heading": "Empty spaces and the bonus tile",
+      "body": [
+        "Your quilt board has 81 squares. Every square you did not cover costs 2 points, so a few cheap filler patches late in the game can be worth more than they cost.",
+        "The first player to completely fill a 7×7 area on their board takes the 7-point bonus tile. Only one player can get it."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much do empty spaces cost in Patchwork?",
+      "a": "2 points per empty square on your quilt board."
+    },
+    {
+      "q": "How much is the bonus tile worth?",
+      "a": "7 points, to the first player who fills a 7×7 square."
+    },
+    {
+      "q": "How are ties broken?",
+      "a": "The player who reached the final space of the time board first wins."
+    }
+  ]
+}

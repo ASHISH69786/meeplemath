@@ -1,0 +1,69 @@
+{
+  "name": "Calico",
+  "metaTitle": "Calico Score Calculator (Cats, Buttons & Design Goals)",
+  "metaDescription": "Free Calico score calculator for 1–4 players. Add design goal tiles, cats and buttons, including the rainbow button, and settle ties.",
+  "players": {
+    "min": 1,
+    "max": 4
+  },
+  "intro": "Calico scores three things: your design goals, the cats you attracted and the buttons you sewed. Enter each player's points and the calculator totals the quilts.",
+  "categories": [
+    {
+      "id": "goals",
+      "label": "Design goal tiles",
+      "type": "number",
+      "help": "Points from your three design goal tiles, depending on whether you met them with colours, patterns or both."
+    },
+    {
+      "id": "cats",
+      "label": "Cats",
+      "type": "number",
+      "help": "Points printed on the cat tiles you attracted."
+    },
+    {
+      "id": "buttons",
+      "label": "Buttons",
+      "type": "number",
+      "help": "Buttons on your quilt, including a rainbow button if you earned one.",
+      "multiplier": 3,
+      "unit": "3 pts each"
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one with the most buttons wins. If still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Calico",
+      "body": [
+        "The game ends when every player has filled their quilt board. Each player then scores their design goal tiles, their cats and their buttons."
+      ]
+    },
+    {
+      "heading": "Design goals",
+      "body": [
+        "Each player has three design goal tiles on their board. Each one describes an arrangement of the six patches around it, such as three pairs, or all different. You score the lower value if you meet the goal with colours or with patterns, and the higher value if you meet it with both."
+      ]
+    },
+    {
+      "heading": "Cats and buttons",
+      "body": [
+        "When you make a group of patches with the patterns a cat likes, in the shape that cat requires, you take a cat token and score the points shown on its tile.",
+        "When you make a group of at least three patches of the same colour, you sew a button of that colour, worth 3 points. If you have a button of all six colours, you also earn a rainbow button worth another 3."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much is a button worth in Calico?",
+      "a": "3 points each, including the rainbow button."
+    },
+    {
+      "q": "How do design goals score?",
+      "a": "Each goal shows two values: the lower one if you meet it with colours or patterns, the higher if you meet it with both."
+    },
+    {
+      "q": "How are ties broken?",
+      "a": "The tied player with the most buttons wins."
+    }
+  ]
+}

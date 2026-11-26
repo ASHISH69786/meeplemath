@@ -1,0 +1,112 @@
+{
+  "name": "Everdell",
+  "metaTitle": "Everdell Score Calculator (with Pearlbrook)",
+  "metaDescription": "Free Everdell score calculator for 1–4 players. Add card points, prosperity bonuses, point tokens, journey and events, plus Pearlbrook pearls and wonders.",
+  "players": {
+    "min": 1,
+    "max": 6
+  },
+  "intro": "Everdell's final count spans your whole city: base points on every card, the bonuses from purple prosperity cards, tokens, the journey and events. Enter each player's totals and the calculator adds them up.",
+  "categories": [
+    {
+      "id": "cards",
+      "label": "Base card points",
+      "type": "number",
+      "help": "Points printed on every critter and construction in your city."
+    },
+    {
+      "id": "prosperity",
+      "label": "Prosperity card bonuses",
+      "type": "number",
+      "help": "Extra points from purple prosperity cards, such as the Castle or Palace, scored for what is in your city."
+    },
+    {
+      "id": "tokens",
+      "label": "Point tokens",
+      "type": "number",
+      "help": "The value of the point tokens you collected during the game."
+    },
+    {
+      "id": "journey",
+      "label": "Journey",
+      "type": "number",
+      "help": "Points from the journey spaces your workers went to in autumn."
+    },
+    {
+      "id": "events",
+      "label": "Events",
+      "type": "number",
+      "help": "Points from basic and special events you achieved."
+    }
+  ],
+  "expansions": [
+    {
+      "id": "pearlbrook",
+      "name": "Pearlbrook",
+      "description": "Adds pearls, wonders and adornments. Each pearl is worth 2 points.",
+      "categories": [
+        {
+          "id": "pearls",
+          "label": "Pearls",
+          "type": "number",
+          "help": "Pearls left at the end of the game.",
+          "multiplier": 2,
+          "unit": "2 pts each"
+        },
+        {
+          "id": "wonders",
+          "label": "Wonders",
+          "type": "number",
+          "help": "Points from wonders you built."
+        },
+        {
+          "id": "adornments",
+          "label": "Adornments",
+          "type": "number",
+          "help": "Points from adornment cards you played."
+        }
+      ]
+    }
+  ],
+  "tiebreaker": "If players are tied, the one who achieved the most events wins. If still tied, the player with the most leftover resources wins.",
+  "rules": [
+    {
+      "heading": "How scoring works in Everdell",
+      "body": [
+        "Everdell ends when every player has passed after their last season. Each player then adds up the points from five sources: the base points on their cards, bonuses from prosperity cards, point tokens, the journey and events."
+      ]
+    },
+    {
+      "heading": "Cards and prosperity bonuses",
+      "body": [
+        "Every card shows its base points in the top-left corner. Purple prosperity cards also score a bonus based on the rest of your city, for example points for every common construction. Add the base value of all cards first, then the prosperity bonuses as a separate total, so nothing gets counted twice or missed."
+      ]
+    },
+    {
+      "heading": "Tokens, journey and events",
+      "body": [
+        "Point tokens are collected from card effects and locations during the game. The journey is available only in autumn: the points shown on the journey spaces you occupied are yours. Basic events are worth 3 points each, and special events show their own value, sometimes with extra points for resources placed on them."
+      ]
+    },
+    {
+      "heading": "Pearlbrook",
+      "body": [
+        "Pearlbrook adds the river. Each pearl you still hold at the end is worth 2 points, and wonders and adornments score the values shown on them. Turn on the expansion above to add these rows."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much is a basic event worth in Everdell?",
+      "a": "3 points. Special events show their own point value."
+    },
+    {
+      "q": "Do leftover resources score?",
+      "a": "No, but they break ties after the number of events."
+    },
+    {
+      "q": "How much is a pearl worth in Pearlbrook?",
+      "a": "2 points each at the end of the game."
+    }
+  ]
+}

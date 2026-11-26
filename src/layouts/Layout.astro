@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  /** JSON-LD objects for this page */
+  schema?: object[];
+}
+
+const { title, description, schema = [] } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const adsClient = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+const fullTitle = title.includes('MeepleMath') ? title : `${title} | MeepleMath`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#fff6e0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MeepleMath" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+    {
+      adsClient && (
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`}
+          crossorigin="anonymous"
+        />
+      )
+    }
+  </head>
+  <body class="min-h-screen bg-paper font-sans text-ink antialiased">
+    <header class="mx-auto max-w-5xl px-4 pt-4">
+      <nav class="chunk flex items-center gap-3 rounded-2xl px-3 py-2 sm:px-4">
+        <a href="/" class="group flex items-center gap-2">
+          <img src="/favicon.svg" alt="" width="36" height="36" class="transition group-hover:-rotate-12" />
+          <span class="font-display text-2xl font-bold tracking-tight">Meeple<span class="text-accent">Math</span></span>
+        </a>
+        <div class="ml-auto flex gap-1 text-sm font-semibold sm:gap-2">
+          <a href="/#games" class="rounded-full px-3 py-1.5 hover:bg-soft">Games</a>
+          <a href="/history/" class="rounded-full px-3 py-1.5 hover:bg-soft">History</a>
+          <a href="/about/" class="hidden rounded-full px-3 py-1.5 hover:bg-soft sm:inline">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-8">
+      <slot />
+    </main>
+
+    <footer class="mt-16 border-t-[2.5px] border-ink bg-ink text-paper">
+      <div class="mx-auto max-w-5xl space-y-4 px-4 py-10 text-sm">
+        <div class="flex items-center gap-2">
+          <img src="/favicon.svg" alt="" width="28" height="28" />
+          <span class="font-display text-xl font-bold">MeepleMath</span>
+          <span class="text-paper/60">· free score calculators for game night</span>
+        </div>
+        <div class="flex flex-wrap gap-x-5 gap-y-1 font-semibold">
+          <a href="/" class="hover:text-sun">All calculators</a>
+          <a href="/history/" class="hover:text-sun">History</a>
+          <a href="/about/" class="hover:text-sun">About &amp; contact</a>
+          <a href="/privacy/" class="hover:text-sun">Privacy policy</a>
+        </div>
+        <p class="max-w-2xl text-paper/60">
+          MeepleMath is an independent fan site and is not affiliated with or endorsed by any game publisher. Game
+          names are trademarks of their respective owners.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      import { registerSW } from 'virtual:pwa-register';
+      registerSW({ immediate: true });
+    </script>
+  </body>
+</html>

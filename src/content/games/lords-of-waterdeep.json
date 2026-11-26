@@ -1,0 +1,92 @@
+{
+  "name": "Lords of Waterdeep",
+  "metaTitle": "Lords of Waterdeep Score Calculator (with Skullport)",
+  "metaDescription": "Free Lords of Waterdeep score calculator for 2–5 players. Add the VP track, Lord bonus, leftover adventurers and gold, plus Skullport corruption.",
+  "players": {
+    "min": 2,
+    "max": 6
+  },
+  "intro": "The hidden Lord card in Lords of Waterdeep can change everything at the end. Reveal the Lords, enter each player's numbers and the calculator gives the final standings.",
+  "categories": [
+    {
+      "id": "track",
+      "label": "Victory point track",
+      "type": "number",
+      "help": "Points scored during the game from quests, buildings and intrigue cards."
+    },
+    {
+      "id": "lord",
+      "label": "Lord of Waterdeep bonus",
+      "type": "number",
+      "help": "The bonus from your secret Lord card, for example 4 points for each completed quest of two particular types."
+    },
+    {
+      "id": "adventurers",
+      "label": "Adventurers left",
+      "type": "number",
+      "help": "Clerics, fighters, rogues and wizards still in your tavern.",
+      "unit": "1 pt each"
+    },
+    {
+      "id": "gold",
+      "label": "Gold",
+      "type": "number",
+      "help": "Gold left over. Every 2 gold scores 1 point.",
+      "divisor": 2,
+      "unit": "1 pt per 2 gold"
+    }
+  ],
+  "expansions": [
+    {
+      "id": "skullport",
+      "name": "Scoundrels of Skullport",
+      "description": "Adds corruption. Each corruption token in your tavern costs points equal to the current value on the corruption track.",
+      "categories": [
+        {
+          "id": "corruption",
+          "label": "Corruption penalty",
+          "type": "number",
+          "help": "Your corruption tokens multiplied by the current value shown on the corruption track. It is subtracted.",
+          "multiplier": -1,
+          "unit": "subtracted"
+        }
+      ]
+    }
+  ],
+  "tiebreaker": "If players are tied, the one with the most gold wins. If still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Lords of Waterdeep",
+      "body": [
+        "The game lasts eight rounds. Most points are scored during play: completing quests, owning buildings that others use and certain intrigue cards all move you along the victory point track.",
+        "At the end, players reveal their Lord of Waterdeep card and add end-game points to their track score."
+      ]
+    },
+    {
+      "heading": "End-of-game points",
+      "body": [
+        "Each adventurer cube still in your tavern is worth 1 point, whatever its type. Every 2 gold is worth 1 point. Your Lord card then gives a bonus, usually 4 points for each completed quest of the two types it names. One Lord instead rewards buildings you control."
+      ]
+    },
+    {
+      "heading": "Scoundrels of Skullport",
+      "body": [
+        "The Skullport expansion adds corruption, which offers powerful actions at a cost. At the end, each corruption token in your tavern loses you points equal to the value currently shown on the corruption track. Multiply and enter the total; it is subtracted."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much are leftover adventurers worth?",
+      "a": "1 point per adventurer cube in your tavern."
+    },
+    {
+      "q": "How much is gold worth at the end?",
+      "a": "1 point for every 2 gold."
+    },
+    {
+      "q": "How are ties broken?",
+      "a": "The tied player with the most gold wins."
+    }
+  ]
+}

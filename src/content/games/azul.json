@@ -1,0 +1,81 @@
+{
+  "name": "Azul",
+  "metaTitle": "Azul Score Calculator (End-of-Game Bonuses)",
+  "metaDescription": "Free Azul score calculator for 2–4 players. Add your score track to the end bonuses for complete rows, columns and colours and find the winner instantly.",
+  "players": {
+    "min": 2,
+    "max": 4
+  },
+  "intro": "In Azul most points are scored as you tile your wall, but the end-of-game bonuses can still swing the result. Enter each player's score track and their completed rows, columns and colours to get the final ranking.",
+  "categories": [
+    {
+      "id": "track",
+      "label": "Score track",
+      "type": "number",
+      "help": "Your score on the scoring track after the last round of wall-tiling, with floor line penalties already taken off.",
+      "allowNegative": false
+    },
+    {
+      "id": "rows",
+      "label": "Complete horizontal rows",
+      "type": "number",
+      "help": "Rows of 5 tiles across your wall.",
+      "multiplier": 2,
+      "unit": "2 pts each"
+    },
+    {
+      "id": "columns",
+      "label": "Complete vertical columns",
+      "type": "number",
+      "help": "Columns of 5 tiles down your wall.",
+      "multiplier": 7,
+      "unit": "7 pts each"
+    },
+    {
+      "id": "colours",
+      "label": "Complete colours",
+      "type": "number",
+      "help": "Colours with all 5 tiles placed on your wall.",
+      "multiplier": 10,
+      "unit": "10 pts each"
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one with the most complete horizontal rows wins. If they are still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Azul",
+      "body": [
+        "The game ends at the end of the round in which at least one player completes a horizontal row of 5 tiles on their wall. After the final wall-tiling, each player adds end-of-game bonuses to the score already on the scoring track."
+      ]
+    },
+    {
+      "heading": "Scoring during the game",
+      "body": [
+        "Each tile you move to your wall scores straight away. A tile with no neighbours scores 1 point. If it joins a horizontal line of tiles, it scores 1 for each tile in that line; if it joins a vertical line, it scores 1 for each tile in that line. If it joins both, both lines score.",
+        "Tiles left on your floor line cost points at the end of each round: −1, −1, −2, −2, −2, −3, −3 for the first to seventh spaces. Your score cannot go below zero."
+      ]
+    },
+    {
+      "heading": "End-of-game bonuses",
+      "body": [
+        "Each complete horizontal row of 5 tiles is worth 2 points. Each complete vertical column of 5 tiles is worth 7 points. Each colour for which you placed all 5 tiles on your wall is worth 10 points.",
+        "Columns and colours are worth far more than rows, which is why experienced players often keep playing for them even when the game is about to end."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What are the end-game bonuses in Azul?",
+      "a": "2 points per complete row, 7 points per complete column and 10 points per colour with all 5 tiles placed."
+    },
+    {
+      "q": "Can your Azul score go negative?",
+      "a": "No. Floor line penalties can drop your score to zero but not below."
+    },
+    {
+      "q": "How are ties broken in Azul?",
+      "a": "The tied player with more complete horizontal rows wins. If still tied, the victory is shared."
+    }
+  ]
+}

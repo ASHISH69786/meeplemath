@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+const updated = '26 November 2026';
+---
+
+<Layout title="Privacy Policy" description="How MeepleMath handles your data, cookies and advertising.">
+  <article class="prose-mm max-w-3xl">
+    <h1 class="font-display text-4xl font-bold tracking-tight">Privacy policy</h1>
+    <p class="text-sm text-muted">Last updated {updated}</p>
+
+    <h2>Your game data stays on your device</h2>
+    <p>
+      Scores, player names, saved games and stats are stored in your browser's local storage and IndexedDB. They are
+      never sent to MeepleMath. Clearing your browser data, or using "Delete all" on the history page, removes them.
+    </p>
+
+    <h2>Analytics</h2>
+    <p>
+      We use Cloudflare Web Analytics to count page views. It does not use cookies or track you across sites. See
+      <a class="underline" href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.
+    </p>
+
+    <h2>Advertising and cookies</h2>
+    <p>
+      MeepleMath is funded by ads served by Google AdSense. Google and its partners use cookies to serve ads based on
+      your previous visits to this and other websites. You can opt out of personalised advertising in
+      <a class="underline" href="https://adssettings.google.com/">Google's Ads Settings</a>. Learn how Google uses
+      information from sites that use its services at
+      <a class="underline" href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.
+    </p>
+    <p>
+      Visitors in the European Economic Area, the UK and Switzerland are asked for consent through Google's certified
+      consent message before personalised ads are shown, and can change their choice at any time from the privacy
+      link it adds to the page.
+    </p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy: <a class="underline" href="mailto:hello@meeplemath.org">hello@meeplemath.org</a>.</p>
+  </article>
+</Layout>

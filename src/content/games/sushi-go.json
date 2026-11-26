@@ -1,0 +1,74 @@
+{
+  "name": "Sushi Go!",
+  "metaTitle": "Sushi Go! Score Calculator (Rounds & Pudding)",
+  "metaDescription": "Free Sushi Go! score calculator for 2–5 players. Add all three rounds plus the pudding bonus and penalty, with card values explained.",
+  "players": {
+    "min": 2,
+    "max": 5
+  },
+  "intro": "Sushi Go! is scored after each of its three rounds, with pudding scored only at the very end. Enter each round's points and the pudding result, and the calculator finds the winner.",
+  "categories": [
+    {
+      "id": "round1",
+      "label": "Round 1",
+      "type": "number",
+      "help": "Points scored at the end of round 1."
+    },
+    {
+      "id": "round2",
+      "label": "Round 2",
+      "type": "number",
+      "help": "Points scored at the end of round 2."
+    },
+    {
+      "id": "round3",
+      "label": "Round 3",
+      "type": "number",
+      "help": "Points scored at the end of round 3."
+    },
+    {
+      "id": "pudding",
+      "label": "Pudding",
+      "type": "number",
+      "help": "+6 for the most puddings, −6 for the fewest (no penalty in a 2-player game). Ties split the points.",
+      "allowNegative": true
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one with the most pudding cards wins. If still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Sushi Go!",
+      "body": [
+        "Sushi Go! is played over three rounds. At the end of each round, everyone scores the cards they kept, then discards everything except puddings. After round 3, puddings are scored and the highest total wins."
+      ]
+    },
+    {
+      "heading": "Card values",
+      "body": [
+        "Maki rolls: the player with the most maki icons scores 6 and second place scores 3. Tempura: 5 points per pair. Sashimi: 10 points per set of three. Dumplings: 1, 3, 6, 10 or 15 points for 1 to 5 or more.",
+        "Nigiri: egg 1, salmon 2 and squid 3 points. Placed on a wasabi, a nigiri scores triple. Chopsticks score nothing but let you take two cards on a later turn."
+      ]
+    },
+    {
+      "heading": "Pudding",
+      "body": [
+        "At the end of the game, the player with the most pudding cards scores 6 points and the player with the fewest loses 6. Tied players split the points, rounding down. In a 2-player game, nobody loses points for having the fewest."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much are dumplings worth in Sushi Go?",
+      "a": "1, 3, 6, 10 or 15 points for 1, 2, 3, 4 or 5+ dumplings."
+    },
+    {
+      "q": "How does pudding score?",
+      "a": "Most puddings +6, fewest −6, split on ties. There is no penalty in a 2-player game."
+    },
+    {
+      "q": "Does wasabi work without nigiri?",
+      "a": "No. An empty wasabi scores nothing; it only triples the next nigiri placed on it."
+    }
+  ]
+}

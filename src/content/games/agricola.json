@@ -1,0 +1,320 @@
+{
+  "name": "Agricola",
+  "metaTitle": "Agricola Score Calculator (Full Farm Scoring Table)",
+  "metaDescription": "Free Agricola score calculator for 1–4 players. Enter fields, pastures, crops and animals and it applies the scoring table, rooms, family and begging cards.",
+  "players": {
+    "min": 1,
+    "max": 4
+  },
+  "intro": "Agricola's scoring table is the most confusing part of the game: every crop and animal has its own thresholds, and missing anything costs a point. Enter what each farm has and the calculator applies the table for you.",
+  "categories": [
+    {
+      "id": "fields",
+      "label": "Fields",
+      "type": "table",
+      "help": "Plowed field tiles on your farm.",
+      "steps": [
+        {
+          "min": 0,
+          "points": -1
+        },
+        {
+          "min": 2,
+          "points": 1
+        },
+        {
+          "min": 3,
+          "points": 2
+        },
+        {
+          "min": 4,
+          "points": 3
+        },
+        {
+          "min": 5,
+          "points": 4
+        }
+      ],
+      "unit": "−1 to 4"
+    },
+    {
+      "id": "pastures",
+      "label": "Pastures",
+      "type": "table",
+      "help": "Fenced pastures (each enclosed area counts once).",
+      "steps": [
+        {
+          "min": 0,
+          "points": -1
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 2,
+          "points": 2
+        },
+        {
+          "min": 3,
+          "points": 3
+        },
+        {
+          "min": 4,
+          "points": 4
+        }
+      ],
+      "unit": "−1 to 4"
+    },
+    {
+      "id": "grain",
+      "label": "Grain",
+      "type": "table",
+      "help": "All grain you own, in your supply and planted in fields.",
+      "steps": [
+        {
+          "min": 0,
+          "points": -1
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 4,
+          "points": 2
+        },
+        {
+          "min": 6,
+          "points": 3
+        },
+        {
+          "min": 8,
+          "points": 4
+        }
+      ],
+      "unit": "−1 to 4"
+    },
+    {
+      "id": "vegetables",
+      "label": "Vegetables",
+      "type": "table",
+      "help": "All vegetables you own, in your supply and planted in fields.",
+      "steps": [
+        {
+          "min": 0,
+          "points": -1
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 2,
+          "points": 2
+        },
+        {
+          "min": 3,
+          "points": 3
+        },
+        {
+          "min": 4,
+          "points": 4
+        }
+      ],
+      "unit": "−1 to 4"
+    },
+    {
+      "id": "sheep",
+      "label": "Sheep",
+      "type": "table",
+      "help": "All sheep on your farm.",
+      "steps": [
+        {
+          "min": 0,
+          "points": -1
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 4,
+          "points": 2
+        },
+        {
+          "min": 6,
+          "points": 3
+        },
+        {
+          "min": 8,
+          "points": 4
+        }
+      ],
+      "unit": "−1 to 4"
+    },
+    {
+      "id": "boar",
+      "label": "Wild boar",
+      "type": "table",
+      "help": "All wild boar on your farm.",
+      "steps": [
+        {
+          "min": 0,
+          "points": -1
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 3,
+          "points": 2
+        },
+        {
+          "min": 5,
+          "points": 3
+        },
+        {
+          "min": 7,
+          "points": 4
+        }
+      ],
+      "unit": "−1 to 4"
+    },
+    {
+      "id": "cattle",
+      "label": "Cattle",
+      "type": "table",
+      "help": "All cattle on your farm.",
+      "steps": [
+        {
+          "min": 0,
+          "points": -1
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 2,
+          "points": 2
+        },
+        {
+          "min": 4,
+          "points": 3
+        },
+        {
+          "min": 6,
+          "points": 4
+        }
+      ],
+      "unit": "−1 to 4"
+    },
+    {
+      "id": "unused",
+      "label": "Unused farmyard spaces",
+      "type": "number",
+      "help": "Spaces that are not plowed, fenced or built on. Each costs 1 point.",
+      "multiplier": -1,
+      "unit": "−1 pt each"
+    },
+    {
+      "id": "stables",
+      "label": "Fenced stables",
+      "type": "number",
+      "help": "Stables inside a pasture.",
+      "unit": "1 pt each"
+    },
+    {
+      "id": "clay",
+      "label": "Clay rooms",
+      "type": "number",
+      "help": "Rooms in a clay hut.",
+      "unit": "1 pt each"
+    },
+    {
+      "id": "stone",
+      "label": "Stone rooms",
+      "type": "number",
+      "help": "Rooms in a stone house.",
+      "multiplier": 2,
+      "unit": "2 pts each"
+    },
+    {
+      "id": "family",
+      "label": "Family members",
+      "type": "number",
+      "help": "All your family members.",
+      "multiplier": 3,
+      "unit": "3 pts each"
+    },
+    {
+      "id": "begging",
+      "label": "Begging cards",
+      "type": "number",
+      "help": "Begging cards taken when you could not feed your family.",
+      "multiplier": -3,
+      "unit": "−3 pts each"
+    },
+    {
+      "id": "cards",
+      "label": "Card points",
+      "type": "number",
+      "help": "Points printed on your improvements and occupations."
+    },
+    {
+      "id": "bonus",
+      "label": "Bonus points",
+      "type": "number",
+      "help": "Extra points from card effects, such as the bonus from the Joinery or Pottery."
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Agricola",
+      "body": [
+        "After the final harvest at the end of round 14, every player scores their farm. Agricola rewards a balanced farm: for each type of field, crop and animal, having none costs you a point, and the points grow in steps as you have more.",
+        "Piling everything into one crop or animal rarely wins. The scoring table is built so that a little of everything beats a lot of one thing."
+      ]
+    },
+    {
+      "heading": "The scoring table",
+      "body": [
+        "Fields: 0–1 scores −1, 2 scores 1, 3 scores 2, 4 scores 3 and 5 or more scores 4. Pastures: 0 scores −1, then 1, 2, 3 and 4 or more score 1 to 4.",
+        "Grain: 0 scores −1, 1–3 scores 1, 4–5 scores 2, 6–7 scores 3 and 8 or more scores 4. Vegetables: 0 scores −1, then 1, 2, 3 and 4 or more score 1 to 4.",
+        "Sheep: 0 scores −1, 1–3 scores 1, 4–5 scores 2, 6–7 scores 3 and 8 or more scores 4. Wild boar: 0 scores −1, 1–2 scores 1, 3–4 scores 2, 5–6 scores 3 and 7 or more scores 4. Cattle: 0 scores −1, 1 scores 1, 2–3 scores 2, 4–5 scores 3 and 6 or more scores 4.",
+        "Grain and vegetables count whether they are in your supply or still planted in fields."
+      ]
+    },
+    {
+      "heading": "Farmyard, house and family",
+      "body": [
+        "Every unused space on your farmyard costs 1 point. Each fenced stable scores 1 point. Each clay room scores 1 point and each stone room scores 2; wooden rooms score nothing. Each family member, including newborns, is worth 3 points.",
+        "Each begging card, taken when you could not feed your family at harvest, costs 3 points."
+      ]
+    },
+    {
+      "heading": "Cards and bonus points",
+      "body": [
+        "Major and minor improvements and some occupations show victory points. Some improvements, such as the craft buildings, also give bonus points for leftover resources at the end. Enter printed points and bonus points in their own rows."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What happens if I have no sheep in Agricola?",
+      "a": "You lose 1 point. Each crop, animal, field and pasture type you have none of is worth −1."
+    },
+    {
+      "q": "How many points is a family member worth?",
+      "a": "3 points each."
+    },
+    {
+      "q": "Do planted grain and vegetables count?",
+      "a": "Yes. Count everything in your supply and everything still in your fields."
+    }
+  ]
+}

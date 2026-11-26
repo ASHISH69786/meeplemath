@@ -1,0 +1,63 @@
+{
+  "name": "Splendor",
+  "metaTitle": "Splendor Score Calculator (Prestige Points & Nobles)",
+  "metaDescription": "Free Splendor score calculator for 2–4 players. Add prestige points from development cards and noble tiles, and settle ties by fewest cards bought.",
+  "players": {
+    "min": 2,
+    "max": 4
+  },
+  "intro": "Splendor ends when someone reaches 15 prestige points, but the round is finished so everyone gets the same number of turns. Use this calculator to check the final totals and the tiebreaker.",
+  "categories": [
+    {
+      "id": "cards",
+      "label": "Development card points",
+      "type": "number",
+      "help": "Prestige points printed in the top-left corner of the development cards you bought."
+    },
+    {
+      "id": "nobles",
+      "label": "Noble tiles",
+      "type": "number",
+      "help": "Nobles who visited you. Each one is worth 3 prestige points.",
+      "multiplier": 3,
+      "unit": "3 pts each"
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one who bought the fewest development cards wins.",
+  "rules": [
+    {
+      "heading": "How scoring works in Splendor",
+      "body": [
+        "Prestige points come from two places: the development cards you buy and the nobles who visit you. When a player reaches 15 points, finish the current round so that every player has had the same number of turns. Then the player with the most prestige points wins."
+      ]
+    },
+    {
+      "heading": "Development cards and nobles",
+      "body": [
+        "Only some development cards show prestige points, usually the more expensive level 2 and level 3 cards. Reserved cards in your hand do not count.",
+        "At the end of your turn, if your development cards (not your tokens) meet a noble's requirements, that noble visits you and is worth 3 points. You can receive only one noble per turn."
+      ]
+    },
+    {
+      "heading": "Ties",
+      "body": [
+        "If two or more players have the same score, the player who bought the fewest development cards wins. It rewards reaching the same total more efficiently."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many points do you need to win Splendor?",
+      "a": "15 prestige points triggers the end. The round is completed, then the highest score wins."
+    },
+    {
+      "q": "How much is a noble worth?",
+      "a": "3 prestige points."
+    },
+    {
+      "q": "Do reserved cards count?",
+      "a": "No. Only cards you have bought count toward your score."
+    }
+  ]
+}

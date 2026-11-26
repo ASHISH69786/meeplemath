@@ -1,0 +1,108 @@
+{
+  "name": "Carcassonne",
+  "metaTitle": "Carcassonne Score Calculator (Final Scoring & Farms)",
+  "metaDescription": "Free Carcassonne score calculator for 2–5 players. Handles unfinished roads, cities, monasteries and farmers at the end, plus Traders & Builders goods.",
+  "players": {
+    "min": 2,
+    "max": 6
+  },
+  "intro": "Carcassonne's final scoring trips people up: unfinished features score less, and farmers only score at the very end. Enter each player's score track and their end-of-game points and the calculator adds them up.",
+  "categories": [
+    {
+      "id": "track",
+      "label": "Score track",
+      "type": "number",
+      "help": "Points already scored during the game for completed roads, cities and monasteries."
+    },
+    {
+      "id": "roads",
+      "label": "Unfinished roads",
+      "type": "number",
+      "help": "1 point per tile in each unfinished road where you have the majority of meeples.",
+      "unit": "1 pt per tile"
+    },
+    {
+      "id": "cities",
+      "label": "Unfinished cities",
+      "type": "number",
+      "help": "1 point per tile plus 1 per pennant in each unfinished city you control.",
+      "unit": "1 pt per tile/pennant"
+    },
+    {
+      "id": "monasteries",
+      "label": "Unfinished monasteries",
+      "type": "number",
+      "help": "For each unfinished monastery, 1 point for the monastery plus 1 for each tile around it."
+    },
+    {
+      "id": "farms",
+      "label": "Farms",
+      "type": "number",
+      "help": "For each field you control, count the completed cities it touches. Enter the total; each city is worth 3 points.",
+      "multiplier": 3,
+      "unit": "3 pts per city"
+    }
+  ],
+  "expansions": [
+    {
+      "id": "traders-builders",
+      "name": "Traders & Builders",
+      "description": "Adds trade goods (wine, grain and cloth). At the end, the player with the most of each type scores 10 points. Tied players each score 10.",
+      "categories": [
+        {
+          "id": "goods",
+          "label": "Trade goods majorities",
+          "type": "number",
+          "help": "How many of the three goods types (wine, grain, cloth) you have the most of, including ties.",
+          "multiplier": 10,
+          "unit": "10 pts each"
+        }
+      ]
+    }
+  ],
+  "tiebreaker": "Carcassonne has no tiebreaker: tied players share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Carcassonne",
+      "body": [
+        "Most points are scored during the game as soon as a road, city or monastery is completed. A completed road scores 1 point per tile, a completed city scores 2 points per tile and 2 per pennant, and a completed monastery scores 9 points (the monastery tile plus its eight neighbours).",
+        "When the last tile is placed, every meeple still on the board scores once more, at lower values, and farmers score for the first time."
+      ]
+    },
+    {
+      "heading": "Unfinished features",
+      "body": [
+        "An unfinished road scores 1 point per tile. An unfinished city scores 1 point per tile and 1 per pennant, half its completed value. An unfinished monastery scores 1 point for itself plus 1 for each tile around it.",
+        "If several players share a feature, whoever has the most meeples on it scores the full amount. Tied players each score the full amount."
+      ]
+    },
+    {
+      "heading": "Farmers",
+      "body": [
+        "Farmers lie in fields and are scored only at the end. For each field, the player with the most farmers scores 3 points for every completed city that the field touches. A single city can be scored by several different fields.",
+        "Incomplete cities give farmers nothing, so it can pay to finish a city late in the game even if you do not own it."
+      ]
+    },
+    {
+      "heading": "Expansions",
+      "body": [
+        "With Inns & Cathedrals, a road with an inn scores 2 points per tile when completed but nothing if unfinished, and a city with a cathedral scores 3 points per tile and pennant when completed but nothing if unfinished. Enter those values in the same rows.",
+        "With Traders & Builders, you collect trade goods when you complete cities. At the end, whoever has the most wine, the most grain and the most cloth scores 10 points for each. Turn on the expansion above to add that row."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many points is an unfinished city worth?",
+      "a": "1 point per tile and 1 per pennant, half of what it would score if completed."
+    },
+    {
+      "q": "How do farmers score in Carcassonne?",
+      "a": "At the end of the game, the farmer majority in each field scores 3 points for each completed city touching that field."
+    },
+    {
+      "q": "What happens with a tie in Carcassonne?",
+      "a": "There is no tiebreaker. Tied players share the victory."
+    }
+  ]
+}

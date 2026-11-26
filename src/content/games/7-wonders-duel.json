@@ -1,0 +1,94 @@
+{
+  "name": "7 Wonders Duel",
+  "metaTitle": "7 Wonders Duel Score Calculator (Civilian Victory)",
+  "metaDescription": "Free 7 Wonders Duel score calculator. Add blue, green, yellow and purple cards, wonders, progress tokens, coins and military for a civilian victory.",
+  "players": {
+    "min": 2,
+    "max": 2
+  },
+  "intro": "If nobody wins by military or scientific supremacy, 7 Wonders Duel goes to a points count across eight categories. Enter both players' points and the calculator settles it.",
+  "categories": [
+    {
+      "id": "civilian",
+      "label": "Civilian buildings (blue)",
+      "type": "number",
+      "help": "Points on your blue cards."
+    },
+    {
+      "id": "science",
+      "label": "Scientific buildings (green)",
+      "type": "number",
+      "help": "Points printed on your green cards. Science symbols themselves do not score."
+    },
+    {
+      "id": "commercial",
+      "label": "Commercial buildings (yellow)",
+      "type": "number",
+      "help": "Points on yellow cards from Age III."
+    },
+    {
+      "id": "guilds",
+      "label": "Guilds (purple)",
+      "type": "number",
+      "help": "Points from each guild, according to what it counts."
+    },
+    {
+      "id": "wonders",
+      "label": "Wonders",
+      "type": "number",
+      "help": "Points on the wonders you built."
+    },
+    {
+      "id": "progress",
+      "label": "Progress tokens",
+      "type": "number",
+      "help": "Points from progress tokens such as Agriculture, Mathematics or Philosophy."
+    },
+    {
+      "id": "coins",
+      "label": "Coins",
+      "type": "number",
+      "help": "Coins in your treasury. Every 3 coins scores 1 point.",
+      "divisor": 3,
+      "unit": "1 pt per 3 coins"
+    },
+    {
+      "id": "military",
+      "label": "Military",
+      "type": "number",
+      "help": "Points shown in the zone where the conflict pawn ended up on your opponent's side: 0, 2, 5 or 10."
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the player with the most points from civilian (blue) buildings wins. If still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "Three ways to win 7 Wonders Duel",
+      "body": [
+        "You win immediately by military supremacy if the conflict pawn reaches your opponent's capital, or by scientific supremacy if you collect six different science symbols. If neither happens by the end of Age III, the game goes to a civilian victory: the player with the most victory points wins.",
+        "This calculator is for the civilian victory count."
+      ]
+    },
+    {
+      "heading": "Scoring a civilian victory",
+      "body": [
+        "Add the points printed on your blue, green, yellow and purple cards, and on the wonders you built. Some progress tokens give points, such as Agriculture (4), Philosophy (7) and Mathematics (3 per progress token you own).",
+        "Every 3 coins in your treasury is worth 1 point. Finally, look at the conflict pawn: if it is on your opponent's side of the board, you score the points shown in that zone, which is 2, 5 or 10."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do science symbols score points in 7 Wonders Duel?",
+      "a": "Not as symbols. Only the victory points printed on green cards count, unless you reach scientific supremacy and win outright."
+    },
+    {
+      "q": "How much are coins worth?",
+      "a": "1 point for every 3 coins."
+    },
+    {
+      "q": "How is a tie broken?",
+      "a": "The player with the most points from blue civilian buildings wins."
+    }
+  ]
+}

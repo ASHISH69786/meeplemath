@@ -1,0 +1,77 @@
+{
+  "name": "7 Wonders",
+  "metaTitle": "7 Wonders Score Calculator (with Science, Leaders & Cities)",
+  "metaDescription": "Free 7 Wonders score calculator for 3–7 players. Handles military, coins, wonders, every card colour and the science formula, plus Leaders and Cities.",
+  "players": { "min": 3, "max": 7 },
+  "intro": "Scoring 7 Wonders by hand means counting seven categories for every player and squaring science symbols in your head. Enter what each player has below and the calculator does the arithmetic, including the science sets.",
+  "categories": [
+    { "id": "military", "label": "Military conflicts", "type": "number", "allowNegative": true, "help": "Add up your conflict tokens. Victories are worth 1, 3 or 5 (Ages I, II and III) and each defeat token is −1." },
+    { "id": "treasury", "label": "Coins", "type": "number", "divisor": 3, "unit": "1 pt per 3 coins", "help": "Enter the coins in your treasury. Every full set of 3 coins scores 1 point." },
+    { "id": "wonder", "label": "Wonder", "type": "number", "help": "Points printed on the stages of your wonder that you built." },
+    { "id": "civilian", "label": "Civilian structures (blue)", "type": "number", "help": "Points printed on your blue cards." },
+    { "id": "science", "label": "Scientific structures (green)", "type": "sets", "symbols": ["Compass", "Gear", "Tablet"], "perSetBonus": 7, "help": "Enter how many of each science symbol you have. Each symbol scores its count squared, plus 7 points for every complete set of all three." },
+    { "id": "commercial", "label": "Commercial structures (yellow)", "type": "number", "help": "Points from yellow cards that score at the end of the game, mostly from Age III." },
+    { "id": "guilds", "label": "Guilds (purple)", "type": "number", "help": "Points from each guild card, according to what it counts." }
+  ],
+  "expansions": [
+    {
+      "id": "leaders",
+      "name": "Leaders",
+      "description": "Adds leader cards that are recruited at the start of each age. Many leaders score points at the end of the game.",
+      "categories": [
+        { "id": "leaders", "label": "Leaders (white)", "type": "number", "help": "Points from your recruited leaders." }
+      ]
+    },
+    {
+      "id": "cities",
+      "name": "Cities",
+      "description": "Adds black city cards and debt. Each debt token is worth −1 point.",
+      "categories": [
+        { "id": "cities", "label": "Cities (black)", "type": "number", "help": "Points printed on your black city cards." },
+        { "id": "debt", "label": "Debt tokens", "type": "number", "multiplier": -1, "unit": "−1 pt each", "help": "Enter how many debt tokens you hold. Each one subtracts 1 point." }
+      ]
+    }
+  ],
+  "tiebreaker": "If two or more players are tied, the one with the most coins in their treasury wins. If they are still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in 7 Wonders",
+      "body": [
+        "7 Wonders is scored once, at the end of Age III. Each player counts seven categories, in the same order as the score pad that comes with the game: military, treasury, wonder, civilian structures, scientific structures, commercial structures and guilds. The highest total wins.",
+        "Most categories are simply the points printed on your cards. Two need some arithmetic: coins are divided by three, and science is scored with a formula, which is where most counting mistakes happen."
+      ]
+    },
+    {
+      "heading": "Military and coins",
+      "body": [
+        "At the end of each age you compare shields with both neighbours. Winning earns a victory token worth 1 point in Age I, 3 in Age II and 5 in Age III, and losing earns a defeat token worth −1. Add all of your tokens together; the total can be negative.",
+        "Every 3 coins in your treasury is worth 1 point, rounded down, so 11 coins score 3 points. Enter your coin count and the calculator does the division."
+      ]
+    },
+    {
+      "heading": "Science: the squared formula",
+      "body": [
+        "Green cards show one of three symbols: compass, gear or tablet. Each symbol scores the number of that symbol you have multiplied by itself, so 3 gears score 9 points. On top of that, every complete set of one compass, one gear and one tablet scores 7 more.",
+        "For example, 3 compasses, 2 gears and 1 tablet score 9 + 4 + 1 = 14, plus one complete set for 7, making 21 points.",
+        "Some effects, such as the Scientists Guild or the Babylon wonder, give you a symbol of your choice. Choose it at the end of the game: try each option and keep the one that scores the most, then enter the final counts."
+      ]
+    },
+    {
+      "heading": "Wonder, blue, yellow and purple cards",
+      "body": [
+        "Add the points shown on each wonder stage you built and on each blue civilian card. Yellow commercial cards from Age III, such as those that give coins and points per card or wonder stage, score at the end too. Each guild counts something specific, usually cards or tokens in your neighbours' cities, so check each one carefully."
+      ]
+    },
+    {
+      "heading": "Leaders and Cities",
+      "body": [
+        "With the Leaders expansion, add a row for the points your white leader cards score. With Cities, add the points on your black cards and subtract 1 point for each debt token you took when you could not pay a loss of coins."
+      ]
+    }
+  ],
+  "faq": [
+    { "q": "How do you score science in 7 Wonders?", "a": "Square the count of each symbol (compass, gear, tablet), add them up, then add 7 points for each complete set of all three." },
+    { "q": "How many points are coins worth?", "a": "1 point for every 3 coins, rounded down." },
+    { "q": "Is this calculator for 7 Wonders Duel?", "a": "No. 7 Wonders Duel is a separate two-player game with different scoring." }
+  ]
+}

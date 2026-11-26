@@ -1,0 +1,69 @@
+{
+  "name": "Takenoko",
+  "metaTitle": "Takenoko Score Calculator (Objectives & Emperor Bonus)",
+  "metaDescription": "Free Takenoko score calculator for 2–4 players. Add plot, gardener and panda objectives and the Emperor card, and apply the panda tiebreaker.",
+  "players": {
+    "min": 2,
+    "max": 4
+  },
+  "intro": "When someone completes their last objective and claims the Emperor card in Takenoko, everyone gets one final turn. Enter the points on each player's completed objectives to see who tended the best garden.",
+  "categories": [
+    {
+      "id": "plot",
+      "label": "Plot objectives",
+      "type": "number",
+      "help": "Points on your completed plot (land) objective cards."
+    },
+    {
+      "id": "gardener",
+      "label": "Gardener objectives",
+      "type": "number",
+      "help": "Points on your completed gardener (bamboo) objective cards."
+    },
+    {
+      "id": "panda",
+      "label": "Panda objectives",
+      "type": "number",
+      "help": "Points on your completed panda objective cards."
+    },
+    {
+      "id": "emperor",
+      "label": "Emperor card",
+      "type": "bonus",
+      "points": 2,
+      "exclusive": true,
+      "help": "2 points for the player who completed the required number of objectives first."
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one with the most points from panda objectives wins. If still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How scoring works in Takenoko",
+      "body": [
+        "The end is triggered when a player completes a set number of objective cards: 9 with two players, 8 with three and 7 with four. That player takes the Emperor card, worth 2 points, and everyone else gets one last turn.",
+        "Each player then adds up the points printed on the objectives they completed. Objectives still in hand score nothing."
+      ]
+    },
+    {
+      "heading": "The three kinds of objective",
+      "body": [
+        "Plot objectives reward arranging irrigated plots of land in particular shapes and colours. Gardener objectives reward growing bamboo of a set height, sometimes with an improvement. Panda objectives reward having eaten particular combinations of bamboo."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much is the Emperor card worth in Takenoko?",
+      "a": "2 points."
+    },
+    {
+      "q": "Do uncompleted objectives cost points?",
+      "a": "No, they simply score nothing."
+    },
+    {
+      "q": "How are ties broken?",
+      "a": "By the most points from panda objectives."
+    }
+  ]
+}

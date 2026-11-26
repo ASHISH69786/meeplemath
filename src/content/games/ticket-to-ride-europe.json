@@ -1,0 +1,120 @@
+{
+  "name": "Ticket to Ride: Europe",
+  "metaTitle": "Ticket to Ride Europe Score Calculator (Stations & Tunnels)",
+  "metaDescription": "Free Ticket to Ride Europe score calculator for 2–5 players. Count routes including 8-train tunnels, tickets, unused stations and the European Express bonus.",
+  "players": {
+    "min": 2,
+    "max": 5
+  },
+  "intro": "Ticket to Ride: Europe adds stations and an 8-train route to the scoring. Enter each player's routes by length, tickets and stations to recount the final scores.",
+  "categories": [
+    {
+      "id": "routes",
+      "label": "Claimed routes",
+      "type": "counts",
+      "help": "How many routes of each length you claimed, including tunnels and ferries.",
+      "items": [
+        {
+          "label": "1-train routes",
+          "points": 1
+        },
+        {
+          "label": "2-train routes",
+          "points": 2
+        },
+        {
+          "label": "3-train routes",
+          "points": 4
+        },
+        {
+          "label": "4-train routes",
+          "points": 7
+        },
+        {
+          "label": "5-train routes",
+          "points": 10
+        },
+        {
+          "label": "6-train routes",
+          "points": 15
+        },
+        {
+          "label": "8-train routes",
+          "points": 21
+        }
+      ]
+    },
+    {
+      "id": "tickets-done",
+      "label": "Completed tickets",
+      "type": "number",
+      "help": "Add the values of every destination ticket you completed."
+    },
+    {
+      "id": "tickets-failed",
+      "label": "Failed tickets",
+      "type": "number",
+      "help": "Add the values of the tickets you did not complete. They are subtracted.",
+      "multiplier": -1,
+      "unit": "subtracted"
+    },
+    {
+      "id": "stations",
+      "label": "Unused stations",
+      "type": "number",
+      "help": "Stations you did not build. You start with 3.",
+      "multiplier": 4,
+      "unit": "4 pts each"
+    },
+    {
+      "id": "express",
+      "label": "European Express",
+      "type": "bonus",
+      "points": 10,
+      "exclusive": false,
+      "help": "10 points to the player with the longest continuous path. Tied players all score it."
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one who completed the most tickets wins. If still tied, the player who used the fewest stations wins, and then the holder of the European Express bonus.",
+  "rules": [
+    {
+      "heading": "How scoring works in Ticket to Ride: Europe",
+      "body": [
+        "As in the original game, you score routes as you claim them, tickets at the end and a bonus for the longest continuous path, called the European Express. Europe adds stations, which can be worth points if you never build them."
+      ]
+    },
+    {
+      "heading": "Routes",
+      "body": [
+        "A 1-train route scores 1 point, 2 trains score 2, 3 trains score 4, 4 trains score 7, 5 trains score 10 and 6 trains score 15. Europe also has an 8-train tunnel worth 21 points. Tunnels and ferries score by length like any other route."
+      ]
+    },
+    {
+      "heading": "Tickets and stations",
+      "body": [
+        "Completed tickets add their value and uncompleted tickets subtract it. A station lets you use one route owned by another player to complete your tickets. Each player has 3 stations, and every station you did not build is worth 4 points at the end."
+      ]
+    },
+    {
+      "heading": "European Express",
+      "body": [
+        "The player with the longest continuous path of their own trains takes the European Express card for 10 points. Routes borrowed with stations do not count toward it. Tied players all score the bonus."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much is an unused station worth?",
+      "a": "4 points for each of your 3 stations you did not build."
+    },
+    {
+      "q": "How many points is the 8-train route worth?",
+      "a": "21 points."
+    },
+    {
+      "q": "Do station routes count for the European Express?",
+      "a": "No. Only your own trains count toward the longest path."
+    }
+  ]
+}

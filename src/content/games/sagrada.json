@@ -1,0 +1,76 @@
+{
+  "name": "Sagrada",
+  "metaTitle": "Sagrada Score Calculator (Objectives, Favor Tokens & Empty Spaces)",
+  "metaDescription": "Free Sagrada score calculator for 1–4 players. Add public and private objectives and favor tokens, subtract empty spaces, and apply the tiebreakers.",
+  "players": {
+    "min": 1,
+    "max": 6
+  },
+  "intro": "Sagrada's score sheet has you working through every public objective for every window. Enter each player's points below and the calculator totals the stained glass.",
+  "categories": [
+    {
+      "id": "public",
+      "label": "Public objectives",
+      "type": "number",
+      "help": "Total points from the three public objective cards."
+    },
+    {
+      "id": "private",
+      "label": "Private objective",
+      "type": "number",
+      "help": "The sum of the values of all dice in your private objective's colour."
+    },
+    {
+      "id": "favor",
+      "label": "Favor tokens left",
+      "type": "number",
+      "help": "Unspent favor tokens.",
+      "unit": "1 pt each"
+    },
+    {
+      "id": "empty",
+      "label": "Empty spaces",
+      "type": "number",
+      "help": "Open spaces in your window. Each costs 1 point.",
+      "multiplier": -1,
+      "unit": "−1 pt each"
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the highest private objective score wins. If still tied, the most remaining favor tokens wins, then the player who was last in turn order in the final round.",
+  "rules": [
+    {
+      "heading": "How scoring works in Sagrada",
+      "body": [
+        "Sagrada lasts 10 rounds. Afterwards, each player scores their window by adding public objectives, their private objective and unspent favor tokens, then subtracting 1 point for every empty space."
+      ]
+    },
+    {
+      "heading": "Public objectives",
+      "body": [
+        "Three public objective cards are dealt at the start and apply to everyone. They reward things like rows with no repeated colours or sets of particular values, and a card can usually be scored more than once. Score each card and enter the total."
+      ]
+    },
+    {
+      "heading": "Private objective, favor tokens and empty spaces",
+      "body": [
+        "Your private objective is a colour. Add up the pip values of every die of that colour in your window: three purple dice showing 6, 4 and 5 score 15.",
+        "Each favor token you did not spend on tool cards is worth 1 point. Each space in your window with no die costs 1 point."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do you score the private objective in Sagrada?",
+      "a": "Add the face values of all dice in your private colour."
+    },
+    {
+      "q": "Do empty spaces cost points?",
+      "a": "Yes, 1 point per empty space in your window."
+    },
+    {
+      "q": "What is the first tiebreaker?",
+      "a": "The highest private objective score."
+    }
+  ]
+}
