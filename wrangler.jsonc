@@ -1,0 +1,14 @@
+{
+  // Cloudflare Workers config: serve the static Astro build. No server code runs,
+  // so requests are free and unlimited.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "meeplemath",
+  "compatibility_date": "2026-11-26",
+  "assets": {
+    "directory": "./dist",
+    // /about/ -> about/index.html
+    "html_handling": "auto-trailing-slash",
+    // unknown URLs get dist/404.html with a real 404 status
+    "not_found_handling": "404-page"
+  }
+}
