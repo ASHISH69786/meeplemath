@@ -1,0 +1,87 @@
+{
+  "name": "Tokaido",
+  "metaTitle": "Tokaido Score Calculator (Temple & Achievements)",
+  "metaDescription": "Free Tokaido score calculator for 2–5 players. Adds your journey points, temple donor ranking and the Gourmet, Collector, Bather and Chatterbox achievements.",
+  "players": {
+    "min": 2,
+    "max": 5
+  },
+  "intro": "Most Tokaido points are scored on the track during the journey, but the temple ranking and four achievements are added at the end. Enter them here to settle the winner.",
+  "categories": [
+    {
+      "id": "journey",
+      "label": "Score track",
+      "type": "number",
+      "help": "Points on the scoring track when every traveller reaches Edo, including panorama achievements already awarded."
+    },
+    {
+      "id": "temple",
+      "label": "Temple donor ranking",
+      "type": "number",
+      "help": "10 for the most generous donor, 7 for second, 4 for third and 2 for every other traveller who donated. Tied donors all score that rank's points. No donation, no points."
+    },
+    {
+      "id": "gourmet",
+      "label": "Gourmet",
+      "type": "bonus",
+      "points": 3,
+      "exclusive": false,
+      "help": "Highest total cost of meal cards. Tied travellers all score it."
+    },
+    {
+      "id": "collector",
+      "label": "Collector",
+      "type": "bonus",
+      "points": 3,
+      "exclusive": false,
+      "help": "Most souvenir cards. Tied travellers all score it."
+    },
+    {
+      "id": "bather",
+      "label": "Bather",
+      "type": "bonus",
+      "points": 3,
+      "exclusive": false,
+      "help": "Most hot spring cards. Tied travellers all score it."
+    },
+    {
+      "id": "chatterbox",
+      "label": "Chatterbox",
+      "type": "bonus",
+      "points": 3,
+      "exclusive": false,
+      "help": "Most encounter cards. Tied travellers all score it."
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If travellers are tied, the one with the most achievement cards wins.",
+  "rules": [
+    {
+      "heading": "Scoring during the journey",
+      "body": [
+        "Tokaido scores points as you travel. Panorama paintings, hot springs, encounters, souvenirs and temple donations all move your marker along the score track straight away. The first traveller to complete each type of panorama also takes a 3-point achievement during the game."
+      ]
+    },
+    {
+      "heading": "Final scoring at Edo",
+      "body": [
+        "Once everyone reaches Edo, the temple ranking is scored. The most generous donor scores 10 points, the second 7, the third 4 and every other traveller who donated at least one coin scores 2.",
+        "Then four achievements are awarded, each worth 3 points. Gourmet goes to the highest total cost of meal cards, Collector to the most souvenir cards, Bather to the most hot spring cards and Chatterbox to the most encounter cards. Every tied traveller scores the achievement."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much are Tokaido achievements worth?",
+      "a": "3 points each, for both the panorama achievements and the four end-of-game ones."
+    },
+    {
+      "q": "How does temple scoring work?",
+      "a": "10, 7 and 4 points for the top three donors and 2 for every other traveller who donated anything."
+    },
+    {
+      "q": "Who wins a tie in Tokaido?",
+      "a": "The tied traveller with the most achievement cards."
+    }
+  ]
+}

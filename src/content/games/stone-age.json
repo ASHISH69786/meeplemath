@@ -1,0 +1,182 @@
+{
+  "name": "Stone Age",
+  "metaTitle": "Stone Age Score Calculator (Culture & Multipliers)",
+  "metaDescription": "Free Stone Age score calculator for 2–4 players. Adds culture card sets, farmer, tool maker, hut builder and shaman multipliers, and leftover resources.",
+  "players": {
+    "min": 2,
+    "max": 4
+  },
+  "intro": "Much of a Stone Age score is hidden in civilization cards until the very end. Enter your score track, culture sets and multiplier cards, and the calculator does the squaring and multiplying.",
+  "categories": [
+    {
+      "id": "track",
+      "label": "Score track",
+      "type": "number",
+      "help": "Points on the score track when the game ends: buildings, card bonuses and any −10 penalties for not feeding your people.",
+      "allowNegative": true
+    },
+    {
+      "id": "culture1",
+      "label": "Culture cards: first set",
+      "type": "table",
+      "help": "Green-backed cards. Count how many different symbols you have. The set scores that number squared.",
+      "steps": [
+        {
+          "min": 0,
+          "points": 0
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 2,
+          "points": 4
+        },
+        {
+          "min": 3,
+          "points": 9
+        },
+        {
+          "min": 4,
+          "points": 16
+        },
+        {
+          "min": 5,
+          "points": 25
+        },
+        {
+          "min": 6,
+          "points": 36
+        },
+        {
+          "min": 7,
+          "points": 49
+        },
+        {
+          "min": 8,
+          "points": 64
+        }
+      ],
+      "unit": "different symbols"
+    },
+    {
+      "id": "culture2",
+      "label": "Culture cards: second set",
+      "type": "table",
+      "help": "Duplicate symbols start a second set, which is also squared.",
+      "steps": [
+        {
+          "min": 0,
+          "points": 0
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 2,
+          "points": 4
+        },
+        {
+          "min": 3,
+          "points": 9
+        },
+        {
+          "min": 4,
+          "points": 16
+        },
+        {
+          "min": 5,
+          "points": 25
+        },
+        {
+          "min": 6,
+          "points": 36
+        },
+        {
+          "min": 7,
+          "points": 49
+        },
+        {
+          "min": 8,
+          "points": 64
+        }
+      ],
+      "unit": "different symbols"
+    },
+    {
+      "id": "multipliers",
+      "label": "Multiplier cards (sand-coloured)",
+      "type": "product",
+      "help": "Count the figures on your sand-coloured cards of each kind, then the thing they multiply.",
+      "rows": [
+        {
+          "label": "Farmers",
+          "a": "Farmer figures",
+          "b": "Agriculture level"
+        },
+        {
+          "label": "Tool makers",
+          "a": "Tool maker figures",
+          "b": "Total tool value"
+        },
+        {
+          "label": "Hut builders",
+          "a": "Hut builder figures",
+          "b": "Buildings built"
+        },
+        {
+          "label": "Shamans",
+          "a": "Shaman figures",
+          "b": "People"
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "label": "Leftover resources",
+      "type": "number",
+      "help": "1 point for each wood, clay, stone and gold left over. Food does not score.",
+      "unit": "1 pt each"
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, add each player's agriculture level, total tool value and number of people. The highest sum wins.",
+  "rules": [
+    {
+      "heading": "When Stone Age ends",
+      "body": [
+        "The game ends at the end of a round in which a building stack has run out, or when there are not enough civilization cards left to refill the display. Then everyone scores their civilization cards and leftover resources on top of the score track."
+      ]
+    },
+    {
+      "heading": "Culture cards (green background)",
+      "body": [
+        "The green-backed civilization cards show eight different culture symbols. Put your cards into sets with no repeated symbol. Each set scores the number of different symbols squared: 1, 4, 9, 16, 25, 36, 49 or 64 points.",
+        "A duplicate symbol cannot go into the same set, so it starts a second set, which is squared on its own. Five different symbols and then two more gives 25 + 4 = 29 points."
+      ]
+    },
+    {
+      "heading": "Multiplier cards (sand background)",
+      "body": [
+        "Each sand-coloured card shows one or two figures of a type. Add up the figures of each type and multiply. Farmers multiply your agriculture level. Tool makers multiply the total value of your tools (not the number of tool tiles). Hut builders multiply the number of buildings you built. Shamans multiply the number of people in your tribe.",
+        "Finally, every leftover wood, clay, stone or gold is worth 1 point. Food is not a resource for scoring."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do green culture cards score in Stone Age?",
+      "a": "Each set of different symbols scores its size squared. Duplicates form a second set, also squared."
+    },
+    {
+      "q": "Does food score at the end of Stone Age?",
+      "a": "No. Only wood, clay, stone and gold score 1 point each."
+    },
+    {
+      "q": "Do tool makers count tools or tool value?",
+      "a": "Tool value: the total of the numbers on your tool tiles."
+    }
+  ]
+}

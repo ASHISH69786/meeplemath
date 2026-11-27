@@ -7,7 +7,26 @@ export function fieldCount(cat: Category): number {
   if (cat.type === 'counts') return cat.items.length;
   if (cat.type === 'sets') return cat.symbols.length;
   if (cat.type === 'tiered') return cat.fields.length + 1;
+  if (cat.type === 'product') return cat.rows.length * 2;
+  if (cat.type === 'expedition') return cat.rows.length * EXPEDITION_FIELDS.length;
   return 1;
+}
+
+/** Input order for each expedition row. */
+export const EXPEDITION_FIELDS = ['Card total', 'Wagers', 'Number cards'] as const;
+
+/** Points for each row of a product or expedition category. */
+export function rowScores(cat: Category, vals: number[] | undefined): number[] {
+  const v = (i: number) => (vals && Number.isFinite(vals[i]) ? Math.max(0, vals[i]) : 0);
+  if (cat.type === 'product') return cat.rows.map((r, i) => v(i * 2) * v(i * 2 + 1) * r.points);
+  if (cat.type === 'expedition')
+    return cat.rows.map((_, i) => {
+      const k = i * EXPEDITION_FIELDS.length;
+      const sum = v(k), wagers = v(k + 1), cards = v(k + 2);
+      if (sum === 0 && wagers === 0 && cards === 0) return 0; // expedition never started
+      return (sum - cat.cost) * (1 + wagers) + (wagers + cards >= cat.bonusCards ? cat.bonus : 0);
+    });
+  return [];
 }
 
 export function scoreCategory(cat: Category, vals: number[] | undefined): number {
@@ -37,6 +56,9 @@ export function scoreCategory(cat: Category, vals: number[] | undefined): number
       const t = tierIndex(cat, v(0));
       return cat.fields.reduce((sum, f, i) => sum + Math.floor(Math.max(0, v(i + 1)) / f.per) * (f.points[t] ?? 0), 0);
     }
+    case 'product':
+    case 'expedition':
+      return rowScores(cat, vals).reduce((a, b) => a + b, 0);
   }
 }
 

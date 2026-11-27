@@ -61,6 +61,33 @@ const tieredCategory = z.object({
     .min(1),
 });
 
+/**
+ * Rows that each multiply two counts, e.g. Kingdomino territories (squares × crowns)
+ * or Stone Age farmers (cards × agriculture level).
+ * points = Σ a × b × row.points
+ */
+const productCategory = z.object({
+  ...base,
+  type: z.literal('product'),
+  rows: z
+    .array(z.object({ label: z.string(), a: z.string(), b: z.string(), points: z.number().default(1) }))
+    .min(1),
+});
+
+/**
+ * Lost Cities style expeditions. Each row takes: card total, wagers, number cards.
+ * An expedition with no cards scores 0. Otherwise
+ * (total − cost) × (1 + wagers), plus `bonus` if wagers + number cards ≥ bonusCards.
+ */
+const expeditionCategory = z.object({
+  ...base,
+  type: z.literal('expedition'),
+  rows: z.array(z.string()).min(1),
+  cost: z.number().default(20),
+  bonusCards: z.number().int().default(8),
+  bonus: z.number().default(20),
+});
+
 export const categorySchema = z.discriminatedUnion('type', [
   numberCategory,
   bonusCategory,
@@ -68,6 +95,8 @@ export const categorySchema = z.discriminatedUnion('type', [
   setsCategory,
   tableCategory,
   tieredCategory,
+  productCategory,
+  expeditionCategory,
 ]);
 
 export const gameSchema = z.object({

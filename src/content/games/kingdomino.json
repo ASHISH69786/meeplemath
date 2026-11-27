@@ -1,0 +1,129 @@
+{
+  "name": "Kingdomino",
+  "metaTitle": "Kingdomino Score Calculator (Crowns × Squares)",
+  "metaDescription": "Free Kingdomino score calculator for 2–4 players. Multiply squares by crowns for each territory, add Harmony and Middle Kingdom bonuses, and find the winner.",
+  "players": {
+    "min": 2,
+    "max": 4
+  },
+  "intro": "In Kingdomino every territory scores its number of squares multiplied by the crowns inside it. Counting a full 5×5 kingdom by eye is where mistakes creep in, so enter each territory below and let the calculator multiply and add.",
+  "categories": [
+    {
+      "id": "territories",
+      "label": "Territories",
+      "type": "product",
+      "help": "A territory is a group of connected squares of the same terrain (not diagonal). Enter its size and its crowns. Territories without crowns score 0, so you can skip them.",
+      "rows": [
+        {
+          "label": "Territory 1",
+          "a": "Squares",
+          "b": "Crowns"
+        },
+        {
+          "label": "Territory 2",
+          "a": "Squares",
+          "b": "Crowns"
+        },
+        {
+          "label": "Territory 3",
+          "a": "Squares",
+          "b": "Crowns"
+        },
+        {
+          "label": "Territory 4",
+          "a": "Squares",
+          "b": "Crowns"
+        },
+        {
+          "label": "Territory 5",
+          "a": "Squares",
+          "b": "Crowns"
+        },
+        {
+          "label": "Territory 6",
+          "a": "Squares",
+          "b": "Crowns"
+        },
+        {
+          "label": "Territory 7",
+          "a": "Squares",
+          "b": "Crowns"
+        },
+        {
+          "label": "Territory 8",
+          "a": "Squares",
+          "b": "Crowns"
+        }
+      ]
+    }
+  ],
+  "expansions": [
+    {
+      "id": "harmony",
+      "name": "Harmony (optional rule)",
+      "description": "+5 points for a complete 5×5 kingdom with no discarded dominoes.",
+      "categories": [
+        {
+          "id": "harmony",
+          "label": "Harmony",
+          "type": "bonus",
+          "points": 5,
+          "exclusive": false,
+          "help": "Your kingdom fills the full 5×5 grid (7×7 in the 2-player Mighty Duel) and you discarded no dominoes."
+        }
+      ]
+    },
+    {
+      "id": "middle",
+      "name": "Middle Kingdom (optional rule)",
+      "description": "+10 points if your castle sits in the centre of your kingdom.",
+      "categories": [
+        {
+          "id": "middle-kingdom",
+          "label": "Middle Kingdom",
+          "type": "bonus",
+          "points": 10,
+          "exclusive": false,
+          "help": "Your castle is in the centre square of your kingdom's grid."
+        }
+      ]
+    }
+  ],
+  "tiebreaker": "If players are tied, the player with the largest single territory (most squares) wins. If still tied, the player with the most crowns wins. If still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "How Kingdomino is scored",
+      "body": [
+        "At the end of the game each kingdom is divided into territories: groups of squares of the same terrain that touch along their edges. Diagonal contact does not join two areas. Your castle square belongs to no territory.",
+        "Each territory scores its number of squares multiplied by the number of crowns shown anywhere inside it. A six-square wheat field with two crowns scores 12. A huge forest with no crowns scores nothing, which is why grabbing crowns early matters so much."
+      ]
+    },
+    {
+      "heading": "Counting tips",
+      "body": [
+        "Work terrain by terrain and count each separate territory on its own. Two wheat fields that do not touch are two territories, each scored separately.",
+        "Dominoes you could not place legally were discarded during the game and score nothing. Any square outside the 5×5 grid (7×7 in the 2-player Mighty Duel) is not allowed, so a correctly built kingdom never needs trimming at the end."
+      ]
+    },
+    {
+      "heading": "Optional bonus rules",
+      "body": [
+        "Harmony adds 5 points if your kingdom is a complete 5×5 square and you never had to discard a domino. Middle Kingdom adds 10 points if your castle ends up in the centre of your grid. Agree before the game whether you are using either rule, then switch them on above."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do you score Kingdomino?",
+      "a": "For each territory, multiply the number of squares by the number of crowns in it. Add every territory together."
+    },
+    {
+      "q": "Do territories without crowns score?",
+      "a": "No. Squares × 0 crowns is 0, however big the territory."
+    },
+    {
+      "q": "Who wins a tie in Kingdomino?",
+      "a": "The player with the largest territory, then the player with the most crowns. If still tied, players share the win."
+    }
+  ]
+}

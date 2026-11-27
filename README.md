@@ -19,12 +19,16 @@ generated from it. The schema lives in `src/lib/game-schema.ts`, and the build f
 
 Category types:
 
-| type     | player enters                 | points                                         | example                     |
-| -------- | ----------------------------- | ---------------------------------------------- | --------------------------- |
-| `number` | one number                    | `floor(value / divisor) × multiplier`          | eggs, 7 Wonders coins, debt |
-| `bonus`  | a checkbox                    | `points` (`exclusive: true` = one holder only) | Longest Road                |
-| `counts` | how many of each item         | `Σ count × item.points`                        | Ticket to Ride route lengths |
-| `sets`   | how many of each symbol       | `Σ count² + min(counts) × perSetBonus`         | 7 Wonders science           |
+| type | player enters | points | example |
+| --- | --- | --- | --- |
+| `number` | one number | `floor(value / divisor) × multiplier` | eggs, 7 Wonders coins, debt |
+| `bonus` | a checkbox | `points` (`exclusive: true` = one holder only) | Longest Road |
+| `counts` | how many of each item | `Σ count × item.points` | Ticket to Ride route lengths |
+| `sets` | how many of each symbol | `Σ count² + min(counts) × perSetBonus` | 7 Wonders science |
+| `table` | one count | points for the highest `steps[].min` reached | Agricola farm table |
+| `tiered` | a tier value plus counts | `Σ floor(count / per) × field.points[tier]` | Scythe popularity |
+| `product` | two counts per row | `Σ a × b × row.points` | Kingdomino territories |
+| `expedition` | card total, wagers, cards per row | `(total − cost) × (1 + wagers)` + bonus at `bonusCards`; empty row = 0 | Lost Cities |
 
 Expansions can add categories and remove base ones (`"removes": ["largest-army"]`).
 

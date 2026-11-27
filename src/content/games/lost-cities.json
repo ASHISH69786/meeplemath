@@ -1,0 +1,94 @@
+{
+  "name": "Lost Cities",
+  "metaTitle": "Lost Cities Score Calculator (Expeditions & Wagers)",
+  "metaDescription": "Free Lost Cities score calculator. Enter each expedition's card total, wagers and card count; it applies the 20-point cost, multipliers and 8-card bonus.",
+  "players": {
+    "min": 2,
+    "max": 2
+  },
+  "intro": "Lost Cities scoring is quick to explain and easy to get wrong: subtract the cost, multiply by your wagers, then add the bonus. Enter each expedition's numbers and the calculator applies the rules in the right order.",
+  "categories": [
+    {
+      "id": "expeditions",
+      "label": "Expeditions",
+      "type": "expedition",
+      "cost": 20,
+      "bonusCards": 8,
+      "bonus": 20,
+      "help": "Card total = sum of the numbers on your expedition cards. Wagers = handshake cards (0–3). Number cards = how many numbered cards. Leave an expedition at 0 if you never started it.",
+      "rows": [
+        "Yellow",
+        "Blue",
+        "White",
+        "Green",
+        "Red"
+      ]
+    },
+    {
+      "id": "previous",
+      "label": "Earlier rounds",
+      "type": "number",
+      "help": "A full match is three rounds. Enter your running total from previous rounds here, or leave it at 0.",
+      "allowNegative": true
+    }
+  ],
+  "expansions": [
+    {
+      "id": "sixth",
+      "name": "6th Expedition",
+      "description": "Adds a sixth expedition colour with its own cards and wagers.",
+      "categories": [
+        {
+          "id": "sixth-expedition",
+          "label": "6th expedition",
+          "type": "expedition",
+          "cost": 20,
+          "bonusCards": 8,
+          "bonus": 20,
+          "help": "Scored exactly like the other five expeditions.",
+          "rows": [
+            "6th colour"
+          ]
+        }
+      ]
+    }
+  ],
+  "tiebreaker": "The rules do not include a tiebreaker. A tied match is shared, or you can play one more round to decide it.",
+  "rules": [
+    {
+      "heading": "How a Lost Cities expedition scores",
+      "body": [
+        "Only expeditions you started count. If you never placed a card of a colour, that colour scores nothing and costs nothing.",
+        "For every expedition you did start, add up the numbers on its cards, then subtract 20 for the cost of the expedition. An expedition with only a few low cards therefore scores negative points."
+      ]
+    },
+    {
+      "heading": "Wagers multiply the result",
+      "body": [
+        "Wager (handshake) cards can only be placed before any number cards in that expedition. One wager doubles the result, two triple it and three quadruple it. The multiplier applies after the 20 is subtracted, so wagers also multiply a loss.",
+        "Example: cards totalling 30 with two wagers score (30 − 20) × 3 = 30 points. Cards totalling 12 with one wager score (12 − 20) × 2 = −16."
+      ]
+    },
+    {
+      "heading": "The 8-card bonus and rounds",
+      "body": [
+        "An expedition with at least eight cards, wagers included, earns a bonus of 20 points. The bonus is added after multiplying and is never multiplied itself.",
+        "A match is normally three rounds. Keep a running total and the higher score after round three wins."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do wager cards count towards the 8-card bonus?",
+      "a": "Yes. Every card in the expedition counts, including wagers."
+    },
+    {
+      "q": "Is the 20-point bonus multiplied by wagers?",
+      "a": "No. Multiply first, then add the 20-point bonus."
+    },
+    {
+      "q": "What does an expedition with no cards score?",
+      "a": "Nothing. You only pay the 20-point cost for expeditions you started."
+    }
+  ]
+}

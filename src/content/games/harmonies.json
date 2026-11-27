@@ -1,0 +1,239 @@
+{
+  "name": "Harmonies",
+  "metaTitle": "Harmonies Score Calculator (Landscapes & Animal Cards)",
+  "metaDescription": "Free Harmonies score calculator for 1–4 players. Scores trees, mountains, fields, buildings, rivers or islands, animal cards and nature's spirits.",
+  "players": {
+    "min": 1,
+    "max": 4
+  },
+  "intro": "Harmonies scores five kinds of landscape plus your animal cards. Count trees and mountains by height, measure your river and the calculator does the rest.",
+  "categories": [
+    {
+      "id": "trees",
+      "label": "Trees",
+      "type": "counts",
+      "help": "A green token on top of 0, 1 or 2 brown trunk tokens.",
+      "items": [
+        {
+          "label": "Height 1",
+          "points": 1
+        },
+        {
+          "label": "Height 2",
+          "points": 3
+        },
+        {
+          "label": "Height 3",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "id": "mountains",
+      "label": "Mountains",
+      "type": "counts",
+      "help": "Stacks of grey tokens. A mountain only scores if it is next to another mountain.",
+      "items": [
+        {
+          "label": "Height 1",
+          "points": 1
+        },
+        {
+          "label": "Height 2",
+          "points": 3
+        },
+        {
+          "label": "Height 3",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "id": "fields",
+      "label": "Fields",
+      "type": "number",
+      "help": "Each group of 2 or more touching yellow tokens scores 5, however big it is.",
+      "multiplier": 5,
+      "unit": "5 pts each"
+    },
+    {
+      "id": "buildings",
+      "label": "Buildings",
+      "type": "number",
+      "help": "A red building scores 5 if at least 3 different colours surround it (top tokens only).",
+      "multiplier": 5,
+      "unit": "5 pts each"
+    },
+    {
+      "id": "river",
+      "label": "Longest river (side A)",
+      "type": "table",
+      "help": "Count tokens along the shortest path from one end of your best river to the other.",
+      "steps": [
+        {
+          "min": 0,
+          "points": 0
+        },
+        {
+          "min": 2,
+          "points": 2
+        },
+        {
+          "min": 3,
+          "points": 5
+        },
+        {
+          "min": 4,
+          "points": 8
+        },
+        {
+          "min": 5,
+          "points": 11
+        },
+        {
+          "min": 6,
+          "points": 15
+        },
+        {
+          "min": 7,
+          "points": 19
+        },
+        {
+          "min": 8,
+          "points": 23
+        },
+        {
+          "min": 9,
+          "points": 27
+        },
+        {
+          "min": 10,
+          "points": 31
+        },
+        {
+          "min": 11,
+          "points": 35
+        },
+        {
+          "min": 12,
+          "points": 39
+        },
+        {
+          "min": 13,
+          "points": 43
+        },
+        {
+          "min": 14,
+          "points": 47
+        },
+        {
+          "min": 15,
+          "points": 51
+        },
+        {
+          "min": 16,
+          "points": 55
+        },
+        {
+          "min": 17,
+          "points": 59
+        },
+        {
+          "min": 18,
+          "points": 63
+        },
+        {
+          "min": 19,
+          "points": 67
+        },
+        {
+          "min": 20,
+          "points": 71
+        }
+      ],
+      "unit": "tokens"
+    },
+    {
+      "id": "animals",
+      "label": "Animal cards",
+      "type": "number",
+      "help": "For each card, score the number in the highest space without a cube. Cards with every cube still on them score 0."
+    }
+  ],
+  "expansions": [
+    {
+      "id": "side-b",
+      "name": "Side B boards (islands)",
+      "description": "Water scores 5 per island instead of rivers.",
+      "removes": [
+        "river"
+      ],
+      "categories": [
+        {
+          "id": "islands",
+          "label": "Islands (side B)",
+          "type": "number",
+          "help": "Each area of land separated from the rest by water is an island worth 5. You always have at least 1.",
+          "multiplier": 5,
+          "unit": "5 pts each"
+        }
+      ]
+    },
+    {
+      "id": "spirits",
+      "name": "Nature's Spirit cards",
+      "description": "Adds the points from your spirit card.",
+      "categories": [
+        {
+          "id": "spirit",
+          "label": "Nature's spirit",
+          "type": "number",
+          "help": "Points from your nature's spirit card, scored like an animal card."
+        }
+      ]
+    }
+  ],
+  "tiebreaker": "If players are tied, the one who has placed the most animal cubes wins. If still tied, they share the victory.",
+  "rules": [
+    {
+      "heading": "When Harmonies ends",
+      "body": [
+        "The game ends when the pouch cannot refill the central board, or when a player has two or fewer empty spaces on their board. Finish the round so everyone has had the same number of turns, then score landscapes and animal cards."
+      ]
+    },
+    {
+      "heading": "Scoring landscapes",
+      "body": [
+        "Trees score by height: a green token alone is 1 point, on one brown trunk 3 points and on two trunks 7 points. Mountains score the same 1, 3 or 7 by height, but only when the mountain is next to at least one other mountain.",
+        "Each field of two or more touching yellow tokens scores 5 points, whatever its size. A building scores 5 points when the top tokens around it show at least three different colours."
+      ]
+    },
+    {
+      "heading": "Water: rivers or islands",
+      "body": [
+        "On side A you score only your best river, measured along the shortest path from one end to the other: 2 points for 2 tokens, 5 for 3, 8 for 4, 11 for 5 and 15 for 6, plus 4 for every token beyond the sixth.",
+        "On side B, water splits your land into islands, and each island scores 5 points. You always have at least one island."
+      ]
+    },
+    {
+      "heading": "Animal cards",
+      "body": [
+        "For every animal card, finished or not, score the number shown in the highest space that no longer has a cube. A card that still has all its cubes scores nothing, but there is no penalty for unfinished cards."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do unfinished animal cards score in Harmonies?",
+      "a": "Yes. Score the highest uncovered number. Only a card with all its cubes still on it scores 0."
+    },
+    {
+      "q": "Why does my mountain score 0?",
+      "a": "A mountain must be next to another mountain to score."
+    },
+    {
+      "q": "How are ties broken in Harmonies?",
+      "a": "The player who placed the most animal cubes wins. If still tied, players share the victory."
+    }
+  ]
+}

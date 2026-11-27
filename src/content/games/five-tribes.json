@@ -1,0 +1,254 @@
+{
+  "name": "Five Tribes",
+  "metaTitle": "Five Tribes Score Calculator (Viziers, Djinns & Merchandise)",
+  "metaDescription": "Free Five Tribes score calculator for 2–4 players. Adds coins, viziers and their bonus, elders, djinns, palm trees, palaces, tiles and merchandise sets.",
+  "players": {
+    "min": 2,
+    "max": 4
+  },
+  "intro": "Five Tribes has eight different sources of points, and the vizier bonus depends on your opponents. Enter what each player owns and the calculator adds it all up.",
+  "categories": [
+    {
+      "id": "coins",
+      "label": "Gold coins",
+      "type": "number",
+      "help": "1 point per coin.",
+      "unit": "1 pt each"
+    },
+    {
+      "id": "viziers",
+      "label": "Viziers (yellow)",
+      "type": "number",
+      "help": "1 point for each Vizier you own.",
+      "unit": "1 pt each"
+    },
+    {
+      "id": "vizier-bonus",
+      "label": "Vizier bonus",
+      "type": "number",
+      "help": "Count the opponents who have strictly fewer Viziers than you. Each is worth 10 points.",
+      "multiplier": 10,
+      "unit": "10 pts per opponent"
+    },
+    {
+      "id": "elders",
+      "label": "Elders (white)",
+      "type": "number",
+      "help": "2 points for each Elder you own.",
+      "multiplier": 2,
+      "unit": "2 pts each"
+    },
+    {
+      "id": "djinns",
+      "label": "Djinns",
+      "type": "number",
+      "help": "Add the points printed on your Djinns."
+    },
+    {
+      "id": "palms",
+      "label": "Palm trees",
+      "type": "number",
+      "help": "3 points for each palm tree on tiles with your camel.",
+      "multiplier": 3,
+      "unit": "3 pts each"
+    },
+    {
+      "id": "palaces",
+      "label": "Palaces",
+      "type": "number",
+      "help": "5 points for each palace on tiles with your camel.",
+      "multiplier": 5,
+      "unit": "5 pts each"
+    },
+    {
+      "id": "tiles",
+      "label": "Tiles",
+      "type": "number",
+      "help": "Add the point values of every tile with one of your camels."
+    },
+    {
+      "id": "merch1",
+      "label": "Merchandise: first set",
+      "type": "table",
+      "help": "Count the different merchandise cards in a set (Fakirs don't count).",
+      "steps": [
+        {
+          "min": 0,
+          "points": 0
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 2,
+          "points": 3
+        },
+        {
+          "min": 3,
+          "points": 7
+        },
+        {
+          "min": 4,
+          "points": 13
+        },
+        {
+          "min": 5,
+          "points": 21
+        },
+        {
+          "min": 6,
+          "points": 30
+        },
+        {
+          "min": 7,
+          "points": 40
+        },
+        {
+          "min": 8,
+          "points": 50
+        },
+        {
+          "min": 9,
+          "points": 60
+        }
+      ],
+      "unit": "different cards"
+    },
+    {
+      "id": "merch2",
+      "label": "Merchandise: second set",
+      "type": "table",
+      "help": "Duplicates start another set, scored the same way.",
+      "steps": [
+        {
+          "min": 0,
+          "points": 0
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 2,
+          "points": 3
+        },
+        {
+          "min": 3,
+          "points": 7
+        },
+        {
+          "min": 4,
+          "points": 13
+        },
+        {
+          "min": 5,
+          "points": 21
+        },
+        {
+          "min": 6,
+          "points": 30
+        },
+        {
+          "min": 7,
+          "points": 40
+        },
+        {
+          "min": 8,
+          "points": 50
+        },
+        {
+          "min": 9,
+          "points": 60
+        }
+      ],
+      "unit": "different cards"
+    },
+    {
+      "id": "merch3",
+      "label": "Merchandise: third set",
+      "type": "table",
+      "help": "Only if you have three or more of one kind.",
+      "steps": [
+        {
+          "min": 0,
+          "points": 0
+        },
+        {
+          "min": 1,
+          "points": 1
+        },
+        {
+          "min": 2,
+          "points": 3
+        },
+        {
+          "min": 3,
+          "points": 7
+        },
+        {
+          "min": 4,
+          "points": 13
+        },
+        {
+          "min": 5,
+          "points": 21
+        },
+        {
+          "min": 6,
+          "points": 30
+        },
+        {
+          "min": 7,
+          "points": 40
+        },
+        {
+          "min": 8,
+          "points": 50
+        },
+        {
+          "min": 9,
+          "points": 60
+        }
+      ],
+      "unit": "different cards"
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "The rules do not separate tied players: they share the victory (or play again).",
+  "rules": [
+    {
+      "heading": "How Five Tribes is scored",
+      "body": [
+        "When the game ends, each player adds up their coins, meeples, djinns, tiles and merchandise. Every gold coin is worth 1 point. Each Vizier is worth 1 point and each Elder 2 points.",
+        "Viziers also give a big bonus: 10 points for each opponent who has strictly fewer Viziers than you. In a 4-player game, owning the most Viziers outright is worth 30 bonus points."
+      ]
+    },
+    {
+      "heading": "Your tiles",
+      "body": [
+        "Every tile with one of your camels on it scores its printed value. On top of that, each palm tree on your tiles scores 3 points and each palace scores 5. Djinns score the points printed on them."
+      ]
+    },
+    {
+      "heading": "Merchandise sets",
+      "body": [
+        "Split your merchandise cards into sets where every card is different. Fakirs are not merchandise and never count. A set of 1 to 9 different cards scores 1, 3, 7, 13, 21, 30, 40, 50 or 60 points. Duplicates start a new set that is scored the same way."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "How does the Vizier bonus work in Five Tribes?",
+      "a": "You score 10 points for every opponent who has strictly fewer Viziers than you. Ties with an opponent give no bonus for that opponent."
+    },
+    {
+      "q": "Do Fakirs score points?",
+      "a": "Not as merchandise. They are only spent to use some Djinns' powers."
+    },
+    {
+      "q": "How do merchandise sets score?",
+      "a": "1, 3, 7, 13, 21, 30, 40, 50 or 60 points for 1 to 9 different cards."
+    }
+  ]
+}

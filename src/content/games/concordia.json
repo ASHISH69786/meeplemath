@@ -1,0 +1,93 @@
+{
+  "name": "Concordia",
+  "metaTitle": "Concordia Score Calculator (Gods & Personality Cards)",
+  "metaDescription": "Free Concordia score calculator for 2–5 players. Scores Vesta, Jupiter, Saturnus, Mercurius, Mars and Minerva cards plus the Concordia card.",
+  "players": {
+    "min": 2,
+    "max": 5
+  },
+  "intro": "Concordia keeps every point hidden until the end, when each personality card is scored for its god. Enter how many cards you hold for each god and what they count, and the calculator multiplies it all out.",
+  "categories": [
+    {
+      "id": "gods",
+      "label": "Personality cards",
+      "type": "product",
+      "help": "For each god, enter how many of its cards you hold and what it counts. Each card scores separately, so two Jupiter cards score Jupiter twice.",
+      "rows": [
+        {
+          "label": "Vesta",
+          "a": "Vesta cards",
+          "b": "Full 10s of sestertii"
+        },
+        {
+          "label": "Jupiter",
+          "a": "Jupiter cards",
+          "b": "Houses in non-brick cities"
+        },
+        {
+          "label": "Saturnus",
+          "a": "Saturnus cards",
+          "b": "Provinces with a house"
+        },
+        {
+          "label": "Mercurius",
+          "a": "Mercurius cards",
+          "b": "Goods types you produce",
+          "points": 2
+        },
+        {
+          "label": "Mars",
+          "a": "Mars cards",
+          "b": "Colonists on the board",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "id": "minerva",
+      "label": "Minerva (specialists)",
+      "type": "number",
+      "help": "Each specialist card shows a value. Score it for every house you have in cities of that card's good, then add all your specialist cards together."
+    },
+    {
+      "id": "concordia",
+      "label": "Concordia card",
+      "type": "bonus",
+      "points": 7,
+      "exclusive": true,
+      "help": "The player who ended the game, by buying the last card from the display or building their 15th house."
+    }
+  ],
+  "expansions": [],
+  "tiebreaker": "If players are tied, the one holding the Praefectus Magnus card wins. If none of the tied players holds it, the tied player who would receive it next wins.",
+  "rules": [
+    {
+      "heading": "How Concordia is scored",
+      "body": [
+        "Nothing is scored during play. When the game ends, each player scores every personality card in their hand and discard pile. Each card belongs to a god, and the god decides what it rewards. Hold three Saturnus cards and you score Saturnus three times.",
+        "The player who triggered the end, by buying the last personality card or building their 15th house, also takes the Concordia card for 7 points."
+      ]
+    },
+    {
+      "heading": "What each god rewards",
+      "body": [
+        "Vesta: add the value of the goods in your storehouse (at the price shown on the board) to your money, then score 1 point per full 10 sestertii. Jupiter: 1 point for each of your houses in a non-brick city, up to 15. Saturnus: 1 point for each province where you have at least one house, up to 12 on the Imperium map and 11 on Italia.",
+        "Mercurius: 2 points for each type of good your houses produce, up to 10. Mars: 2 points for each of your colonists on the board, up to 12. Minerva: each specialist card names a city type and a value, scored for every house you have in cities of that type."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do Concordia cards in the discard pile score?",
+      "a": "Yes. Every personality card you own scores, whether it is in your hand or discard pile."
+    },
+    {
+      "q": "How does Vesta score?",
+      "a": "Add your goods' value to your coins and score 1 point per full 10 sestertii, for each Vesta card."
+    },
+    {
+      "q": "How are ties broken in Concordia?",
+      "a": "The tied player holding the Praefectus Magnus wins, or the tied player who would get it next."
+    }
+  ]
+}

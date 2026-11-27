@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import type { Category, Game } from '../lib/game-schema';
-import { activeCategories, fieldCount, rank, scoreCategory, tierIndex, total, type Values } from '../lib/scoring';
+import { activeCategories, EXPEDITION_FIELDS, fieldCount, rank, rowScores, scoreCategory, tierIndex, total, type Values } from '../lib/scoring';
 import { knownPlayerNames, saveSession, type SavedSession } from '../lib/db';
 import { shareResults } from '../lib/share-image';
 import { PLAYER_COLORS, playerColor } from '../lib/colors';
@@ -454,6 +454,60 @@ function CategoryRow({ cat, values, heldBy, onChange }: RowProps) {
           <Stepper value={val(0)} label={cat.label} onChange={(v) => onChange(0, v)} />
           <span class={`text-xs font-bold tabular-nums ${pts < 0 ? 'text-accent' : 'text-muted'}`}>= {pts} pts</span>
         </div>
+      </li>
+    );
+  }
+
+  if (cat.type === 'product' || cat.type === 'expedition') {
+    const scores = rowScores(cat, values);
+    const groups =
+      cat.type === 'product'
+        ? cat.rows.map((r, i) => ({
+            name: r.label,
+            note: r.points === 1 ? `${r.a} × ${r.b}` : `${r.a} × ${r.b} × ${r.points}`,
+            fields: [
+              { name: r.a, index: i * 2 },
+              { name: r.b, index: i * 2 + 1 },
+            ],
+          }))
+        : cat.rows.map((r, i) => ({
+            name: r,
+            note: '',
+            fields: EXPEDITION_FIELDS.map((f, j) => ({ name: f, index: i * EXPEDITION_FIELDS.length + j })),
+          }));
+    return (
+      <li class={rowCls}>
+        <div class="flex items-start gap-4">
+          {label()}
+          <span class="shrink-0 rounded-xl bg-soft px-3 py-1 font-display text-xl font-bold tabular-nums">= {pts}</span>
+        </div>
+        <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+          {groups.map((g, gi) => (
+            <li key={g.name + gi} class="rounded-2xl bg-paper px-3 py-2">
+              <div class="flex items-baseline justify-between gap-2">
+                <div class="min-w-0">
+                  <span class="font-semibold leading-tight">{g.name}</span>
+                  {g.note && <span class="ml-2 text-xs text-muted">{g.note}</span>}
+                </div>
+                <span class={`shrink-0 text-sm font-bold tabular-nums ${scores[gi] < 0 ? 'text-accent' : 'text-muted'}`}>
+                  {scores[gi]} pts
+                </span>
+              </div>
+              <div class="mt-1.5 space-y-1.5">
+                {g.fields.map((f) => (
+                  <div key={f.name} class="flex items-center justify-between gap-3">
+                    <span class="text-sm text-muted">{f.name}</span>
+                    <Stepper
+                      value={val(f.index)}
+                      label={`${cat.label}: ${g.name}: ${f.name}`}
+                      onChange={(v) => onChange(f.index, v)}
+                    />
+                  </div>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
       </li>
     );
   }
