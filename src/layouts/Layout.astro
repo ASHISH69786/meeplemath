@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import InstallApp from '../components/InstallApp.astro';
 
 interface Props {
   title: string;
@@ -47,13 +48,14 @@ const fullTitle = title.includes('MeepleMath') ? title : `${title} | MeepleMath`
     <header class="mx-auto max-w-5xl px-4 pt-4">
       <nav class="chunk flex items-center gap-3 rounded-2xl px-3 py-2 sm:px-4">
         <a href="/" class="group flex items-center gap-2">
-          <img src="/favicon.svg" alt="" width="36" height="36" class="transition group-hover:-rotate-12" />
-          <span class="font-display text-2xl font-bold tracking-tight">Meeple<span class="text-accent">Math</span></span>
+          <img src="/favicon.svg" alt="" width="36" height="36" class="h-8 w-8 transition group-hover:-rotate-12 sm:h-9 sm:w-9" />
+          <span class="font-display text-xl font-bold tracking-tight sm:text-2xl">Meeple<span class="text-accent">Math</span></span>
         </a>
-        <div class="ml-auto flex gap-1 text-sm font-semibold sm:gap-2">
-          <a href="/#games" class="rounded-full px-3 py-1.5 hover:bg-soft">Games</a>
-          <a href="/history/" class="rounded-full px-3 py-1.5 hover:bg-soft">History</a>
-          <a href="/about/" class="hidden rounded-full px-3 py-1.5 hover:bg-soft sm:inline">About</a>
+        <div class="ml-auto flex items-center gap-0.5 text-sm font-semibold sm:gap-2">
+          <a href="/#games" class="hidden rounded-full px-3 py-1.5 hover:bg-soft sm:inline">Games</a>
+          <a href="/history/" class="rounded-full px-2.5 py-1.5 hover:bg-soft sm:px-3">History</a>
+          <a href="/about/" class="hidden rounded-full px-3 py-1.5 hover:bg-soft md:inline">About</a>
+          <InstallApp part="nav" />
         </div>
       </nav>
     </header>
@@ -81,6 +83,8 @@ const fullTitle = title.includes('MeepleMath') ? title : `${title} | MeepleMath`
         </p>
       </div>
     </footer>
+
+    <InstallApp part="banner" />
 
     <script>
       import { registerSW } from 'virtual:pwa-register';

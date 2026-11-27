@@ -1,0 +1,234 @@
+---
+/**
+ * "Add to home screen" UI.
+ * - Chrome / Edge / Android: uses the browser's real install prompt (beforeinstallprompt).
+ * - iPhone / iPad and browsers without a prompt: opens a dialog with the manual steps.
+ * - Hidden entirely when already running as an installed app.
+ * Pieces: a nav button (rendered where this component's "nav" slot is used) and a
+ * dismissible bottom banner. Both start hidden and are revealed by the script.
+ */
+interface Props {
+  part: 'nav' | 'banner';
+}
+const { part } = Astro.props;
+---
+
+{
+  part === 'nav' && (
+    <button
+      type="button"
+      data-install-open
+      hidden
+      class="whitespace-nowrap rounded-full border-2 border-ink bg-sun px-2.5 py-1 font-semibold hover:-translate-y-px sm:px-3"
+    >
+      📲 <span class="sm:hidden">App</span><span class="hidden sm:inline">Get the app</span>
+    </button>
+  )
+}
+
+{
+  part === 'banner' && (
+    <>
+      <div
+        data-install-banner
+        hidden
+        class="fixed inset-x-3 bottom-3 z-40 mx-auto max-w-md"
+        style="padding-bottom: env(safe-area-inset-bottom)"
+      >
+        <div class="chunk flex items-center gap-3 rounded-2xl p-3">
+          <img src="/pwa-64x64.png" alt="" width="44" height="44" class="shrink-0 rounded-xl border-2 border-ink" />
+          <p class="min-w-0 flex-1 text-sm leading-snug">
+            <strong class="font-display text-base">Add MeepleMath to your home screen</strong>
+            <br />
+            <span class="text-muted">Opens like an app and works offline at the table.</span>
+          </p>
+          <button type="button" data-install-open class="btn shrink-0 bg-accent px-3 py-1.5 text-base text-on-accent">
+            Add
+          </button>
+          <button
+            type="button"
+            data-install-dismiss
+            aria-label="No thanks"
+            class="shrink-0 rounded-full px-2 py-1 text-xl leading-none text-muted hover:text-ink"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
+      <dialog
+        data-install-dialog
+        class="chunk m-auto w-[min(92vw,26rem)] p-0 backdrop:bg-ink/50"
+        aria-labelledby="install-title"
+      >
+        <div class="p-6">
+          <h2 id="install-title" class="font-display text-2xl font-semibold">
+            Add to your home screen
+          </h2>
+
+          <ol data-steps="ios" hidden class="mt-4 space-y-3">
+            <li class="flex gap-3">
+              <span class="step">1</span>
+              <span>
+                Tap the <strong>Share</strong> button
+                <svg class="inline h-5 w-5 align-text-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Share icon">
+                  <path d="M12 3v12M7 8l5-5 5 5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                in the browser bar (at the bottom on iPhone, top on iPad).
+              </span>
+            </li>
+            <li class="flex gap-3">
+              <span class="step">2</span>
+              <span>Scroll down and tap <strong>Add to Home Screen</strong>.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="step">3</span>
+              <span>Tap <strong>Add</strong>. MeepleMath now sits with your other apps.</span>
+            </li>
+          </ol>
+
+          <ol data-steps="android" hidden class="mt-4 space-y-3">
+            <li class="flex gap-3">
+              <span class="step">1</span>
+              <span>Open the browser menu <strong>⋮</strong> (top right).</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="step">2</span>
+              <span>Tap <strong>Add to Home screen</strong> or <strong>Install app</strong>.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="step">3</span>
+              <span>Confirm with <strong>Add</strong> or <strong>Install</strong>.</span>
+            </li>
+          </ol>
+
+          <ol data-steps="desktop" hidden class="mt-4 space-y-3">
+            <li class="flex gap-3">
+              <span class="step">1</span>
+              <span>
+                <strong>Chrome or Edge:</strong> click the install icon at the right end of the address bar, or open the
+                menu and choose <strong>Install MeepleMath</strong>.
+              </span>
+            </li>
+            <li class="flex gap-3">
+              <span class="step">2</span>
+              <span>
+                <strong>Safari on Mac:</strong> choose <strong>File → Add to Dock</strong>.
+              </span>
+            </li>
+            <li class="flex gap-3">
+              <span class="step">3</span>
+              <span>
+                <strong>Firefox:</strong> desktop Firefox can't install sites, so bookmark this page instead. On Android, Firefox's menu has <strong>Install</strong>.
+              </span>
+            </li>
+          </ol>
+
+          <p class="mt-4 text-sm text-muted">It's free, takes no storage to speak of, and your saved games stay on this device.</p>
+          <form method="dialog" class="mt-5 text-right">
+            <button class="btn bg-surface py-2 text-base">Got it</button>
+          </form>
+        </div>
+      </dialog>
+    </>
+  )
+}
+
+<style>
+  .step {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    border: 2px solid var(--color-ink);
+    background: var(--color-sun);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  // Runs once per page (Astro dedupes component scripts), even though the
+  // component is placed twice.
+  type BIPEvent = Event & { prompt: () => Promise<void>; userChoice: Promise<{ outcome: string }> };
+
+  const DISMISS_KEY = 'mm:install-dismissed';
+  const standalone =
+    matchMedia('(display-mode: standalone)').matches || (navigator as { standalone?: boolean }).standalone === true;
+  const ua = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isAndroid = /Android/.test(ua);
+
+  let deferred: BIPEvent | null = null;
+  const $all = (sel: string) => document.querySelectorAll<HTMLElement>(sel);
+  const banner = document.querySelector<HTMLElement>('[data-install-banner]');
+  const dialog = document.querySelector<HTMLDialogElement>('[data-install-dialog]');
+
+  const dismissed = () => {
+    try {
+      return localStorage.getItem(DISMISS_KEY) === '1';
+    } catch {
+      return false;
+    }
+  };
+
+  function showNav(show: boolean) {
+    $all('nav [data-install-open]').forEach((el) => (el.hidden = !show));
+  }
+  function showBanner(show: boolean) {
+    if (banner) banner.hidden = !show || dismissed();
+  }
+  function hideAll() {
+    showNav(false);
+    if (banner) banner.hidden = true;
+  }
+
+  function openHelp() {
+    if (!dialog) return;
+    const which = isIOS ? 'ios' : isAndroid ? 'android' : 'desktop';
+    dialog.querySelectorAll<HTMLElement>('[data-steps]').forEach((el) => (el.hidden = el.dataset.steps !== which));
+    dialog.showModal();
+  }
+
+  async function install() {
+    if (!deferred) return openHelp();
+    const e = deferred;
+    deferred = null; // a prompt event can only be used once
+    try {
+      await e.prompt();
+      const { outcome } = await e.userChoice;
+      if (outcome === 'accepted') hideAll();
+    } catch {
+      openHelp();
+    }
+  }
+
+  if (!standalone) {
+    // The nav button is always useful: it either installs or explains how.
+    showNav(true);
+    // The banner only appears where we can actually help in one or two taps.
+    if (isIOS) showBanner(true);
+
+    addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferred = e as BIPEvent;
+      showBanner(true);
+    });
+    addEventListener('appinstalled', hideAll);
+
+    $all('[data-install-open]').forEach((el) => el.addEventListener('click', install));
+    document.querySelector('[data-install-dismiss]')?.addEventListener('click', () => {
+      try {
+        localStorage.setItem(DISMISS_KEY, '1');
+      } catch {}
+      showBanner(false);
+    });
+    // Close the dialog when tapping the dimmed backdrop.
+    dialog?.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+</script>
